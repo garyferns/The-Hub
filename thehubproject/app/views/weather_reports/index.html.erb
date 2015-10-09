@@ -1,12 +1,13 @@
 <h1>Weather Report</h1>
 
+<!-- @response.get_report -->
 <p>
-  <li>The current temperature is <%= @report.current_temp %> C </li>
-  <li>The high for today is <%= @report.max_temp %> C </li>
-  <li>The low for the day is <%= @report.min_temp %> C </li>
-  <li>It wll be  <%= @report.cloud_cover %> today</li>
+  <li>The current temperature is <%= @weather_report.current_temp %> C </li>
+  <li>The high for today is <%= @weather_report.max_temp %> C </li>
+  <li>The low for the day is <%= @weather_report.min_temp %> C </li>
+  <li>It wll be  <%= @weather_report.cloud_cover %> today</li>
 </p>
 
 <!-- <p>
-  The complete information that we recieved is <%= @report.complete_info %>
+  The complete information that we recieved is <%= @weather_report.complete_info %>
 </p> -->

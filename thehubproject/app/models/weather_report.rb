@@ -7,15 +7,22 @@ class WeatherReport
   include HTTParty
   base_uri 'api.openweathermap.org/data/2.5'
 
-  def initialize(response)
-    @response = response
+  # TODO: Move this into an environment variable later.
+  # It's a free API key, don't really care so much
+  OPEN_WEATHER_API_KEY = '6a5917dc13787ed3bb5379766bae3970'
+
+  def initialize(city)
+    @city = city
   end
 
-  def self.get_report(city)
-    new(get("/weather?q=#{city}"))
+  def get_report
+    @response = self.class.get("/weather?q=#{@city}&APPID=#{OPEN_WEATHER_API_KEY}")
   end
 
   def current_temp
+
+     Rails.logger.info "****** #{ @response }"
+
      c_temp = @response['main']['temp']
      (c_temp - 273.15).ceil
   end
