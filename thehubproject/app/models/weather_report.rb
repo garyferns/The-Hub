@@ -16,10 +16,35 @@ class WeatherReport
   end
 
   def current_temp
-     temp = @response['main']['temp']
-     (temp - 273.15).ceil
+     c_temp = @response['main']['temp']
+     (c_temp - 273.15).ceil
   end
 
+  def max_temp
+     max_temp = @response['main']['temp_max']
+     (max_temp - 273.15).ceil
+  end
+
+  def min_temp
+     min_temp = @response['main']['temp_min']
+     (min_temp - 273.15).ceil
+  end
+
+  def cloud_cover
+    clouds = @response["clouds"]["all"]
+
+    if (clouds < 30)
+      return "sunny"
+    elsif (30 >= clouds && clouds < 60)
+      return "partially cloudy"
+    else
+      return "cloudy"
+    end
+  end
+
+  def complete_info
+    @response
+  end
 
 end
 

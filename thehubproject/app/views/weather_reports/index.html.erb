@@ -1,10 +1,12 @@
-<h1>Index</h1>
+<h1>Weather Report</h1>
 
 <p>
-  The current temperature is
-  <%= @report.current_temp %>
+  <li>The current temperature is <%= @report.current_temp %> C </li>
+  <li>The high for today is <%= @report.max_temp %> C </li>
+  <li>The low for the day is <%= @report.min_temp %> C </li>
+  <li>It wll be  <%= @report.cloud_cover %> today</li>
 </p>
 
-<p>
-  The complete information that we recieved is <%= @report %>
-</p>
+<!-- <p>
+  The complete information that we recieved is <%= @report.complete_info %>
+</p> -->

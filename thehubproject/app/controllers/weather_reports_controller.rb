@@ -9,22 +9,23 @@ class WeatherReportsController < ApplicationController
   end
 
   def show
-    @weatherman = Weatherman.find(params[:id])
-    @comment = @weatherman.comments.build
+    @weather_report = WeatherReport.find(params[:id])
+    @comment = @weather_report.comments.build
   end
 
   def create
-    @weatherman = Weatherman.new(weatherman_params)
+    @weather_report = WeatherReport.new(weather_report_params)
 
     if @weatherman.save
-      redirect_to weathermans_url
+      redirect_to weather_reports_url
     else
       render :new
     end
   end
 end
+
 #   private
-#   def post_params
+#   def weather_report_params
 #     params.require(:post).permit(:title, :body, :author)
 #   end
 # end
