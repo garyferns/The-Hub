@@ -9,19 +9,17 @@ class WeatherReport
 
   # TODO: Move this into an environment variable later.
   # It's a free API key, don't really care so much
-  OPEN_WEATHER_API_KEY = '6a5917dc13787ed3bb5379766bae3970'
+  # OPEN_WEATHER_API_KEY = '6a5917dc13787ed3bb5379766bae3970'
 
   def initialize(city)
     @city = city
   end
 
   def get_report
-    @response = self.class.get("/weather?q=#{@city}&APPID=#{OPEN_WEATHER_API_KEY}")
+    @response = self.class.get("/weather?q=#{@city}&APPID=#{ENV["weather_key"]}")
   end
 
   def current_temp
-
-     Rails.logger.info "****** #{ @response }"
 
      c_temp = @response['main']['temp']
      (c_temp - 273.15).ceil
