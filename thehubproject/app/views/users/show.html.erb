@@ -1,7 +1,39 @@
-<h1>Profile</h1>
+<center>
+<br><h1>Profile</h1></br>
 
-<p>First Name: <%= @user.first_name %> </p>
-<p>Last Name: <%= @user.last_name %> </p>
-<p>Email: <%= @user.email %> </p>
+<p><b>First Name:</b> <%= @user.first_name %> </p>
+<p><b>Last Name:</b> <%= @user.last_name %> </p>
+<p><b>Email:</b> <%= @user.email %> </p>
 
-Edit your information <%= link_to 'here', edit_user_path %>
+<h4>
+Edit your information <b><i><%= link_to 'here', edit_user_path %></i></b>
+</h4>
+
+<br></br>
+
+
+
+
+
+
+
+
+
+<br><p><h1>Edit Applications</h1></p></br>
+
+
+
+<br><p><b>Add a widget</b></p>
+<p> * DROP DOWN WILL APPEAR * </p></br>
+
+
+
+<br><p><b>Remove a widget</b></p>
+<p> * DROP DOWN WILL APPEAR * </p></br>
+
+
+
+
+
+<b><%= link_to 'Back', root_path %></b>
+</center>
