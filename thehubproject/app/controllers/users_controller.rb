@@ -29,6 +29,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+
+    @mentions = $twitter.mentions_timeline(@user.twitter_name)
+
+
+
+
   end
 
 

@@ -11,7 +11,9 @@ Edit your information <b><i><%= link_to 'here', edit_user_path %></i></b>
 
 <br></br>
 
-
+<% @mentions.each do |m| %>
+  <%= m.text %>
+  <% end %>
 
 
 

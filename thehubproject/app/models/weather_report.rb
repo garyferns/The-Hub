@@ -56,8 +56,8 @@ end
 
 
 
-Google Client ID: 298462781452-td4l2sq51m6enukkc54lj4jaad6cmke6.apps.googleusercontent.com
-Google CLient Secret ID: tuqjrvKhxCOHEKAbJBTkeiJW
+# Google Client ID: 298462781452-td4l2sq51m6enukkc54lj4jaad6cmke6.apps.googleusercontent.com
+# Google CLient Secret ID: tuqjrvKhxCOHEKAbJBTkeiJW
 
 
 

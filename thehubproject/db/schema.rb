@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151011232202) do
+ActiveRecord::Schema.define(version: 20151013185009) do
 
   create_table "instagrams", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20151011232202) do
     t.datetime "updated_at",       null: false
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "twitter_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

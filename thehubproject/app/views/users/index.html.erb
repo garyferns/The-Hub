@@ -1,7 +1,12 @@
 <center>
 
-<h1>The Hub Homepage<h1>
+<h1>The Hub Homepage</h1>
 
 <p>Welcome to <b>The Hub</b></p>
 
 </center>
+
+Signup
+<% @tweets.each do |t| %>
+  <p><%= t.screen_name %></p>
+<% end %>
