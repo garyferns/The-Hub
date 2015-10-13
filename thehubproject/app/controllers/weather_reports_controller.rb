@@ -1,7 +1,7 @@
 class WeatherReportsController < ApplicationController
 
   def index
-    @email = Email.new
+    @weather_report = WeatherReport.new('Cairo')
     @weather_report.get_report
   end
 

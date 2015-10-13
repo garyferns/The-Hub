@@ -1,7 +1,8 @@
 <h1>Weather Report</h1>
 
-<!-- @response.get_report -->
-<p>
+<%= stylesheet_link_tag ("weather_view.css") %>
+
+<p id = "1">
   <li>The current temperature is <%= @weather_report.current_temp %> C </li>
   <li>The high for today is <%= @weather_report.max_temp %> C </li>
   <li>The low for the day is <%= @weather_report.min_temp %> C </li>
