@@ -53,12 +53,6 @@ class WeatherReport
 end
 
 
-
-
-
-
-
-
 #   base_uri 'lcboapi.com'
 
 #   def self.all

@@ -1,16 +1,27 @@
 <center>
 <br><h1>Profile</h1></br>
 
-<p><b>First Name:</b> <%= @user.first_name %> </p>
-<p><b>Last Name:</b> <%= @user.last_name %> </p>
-<p><b>Email:</b> <%= @user.email %> </p>
+<p><b>First Name:</b> <%= current_user.first_name %> </p>
+<p><b>Last Name:</b> <%= current_user.last_name %> </p>
+<p><b>Email:</b> <%= current_user.email %> </p>
 
 <h4>
 Edit your information <b><i><%= link_to 'here', edit_user_path %></i></b>
 </h4>
 
 <br></br>
+<p>
+<% @mentions.each do |m| %>
+  <%= m.text %>
+  <% end %>
+  </p>
 
+<p>
+<% @messages.each do |m| %>
+  <%= m.text %>
+  <% end %>
+
+  </p>
 
 
 
