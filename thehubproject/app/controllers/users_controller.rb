@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  before_action :require_login, only: [:show, :edit, :update]
+
   def index
     @user = User.all
   end
@@ -18,7 +21,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
@@ -28,10 +30,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
 
-    @mentions = $twitter.mentions_timeline(@user.twitter_name)
-
+    @mentions = $twitter.mentions_timeline
+    @messages = $twitter.direct_messages
 
 
 
