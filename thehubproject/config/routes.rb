@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
+
   #get 'oauths/oauth'
 
   #get 'oauths/callback'
+
+  get 'email/index'
+
 
   root 'users#index'
   resources :users, except: [:show, :edit]

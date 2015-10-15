@@ -7,8 +7,7 @@ require 'fileutils'
 
 APPLICATION_NAME = 'Gmail API Ruby Quickstart'
 CLIENT_SECRETS_PATH = 'client_secret.json'
-CREDENTIALS_PATH = File.join(Dir.home, '.credentials',
-                             "gmail-ruby-quickstart.json")
+CREDENTIALS_PATH = File.join(Dir.home, '.credentials', "gmail-ruby-quickstart.json")
 SCOPE = 'https://www.googleapis.com/auth/gmail.readonly'
 
 ##

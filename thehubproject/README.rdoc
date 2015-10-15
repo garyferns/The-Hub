@@ -1,4 +1,4 @@
 == README ==
 
 When setting up the Google API key using the guide, ruby quickstart.rb had to be run from the terminal.
-However, a 400 error occurred : Error: redirect_uri_mismatch. The redirect has not been set on the Google account. Ensure to set it inthe future.
+However, a 400 error occurred : Error: redirect_uri_mismatch. The redirect has not been set on the Google account. Ensure to set it in the future.

@@ -7,7 +7,7 @@ class WeatherReport
   include HTTParty
   base_uri 'api.openweathermap.org/data/2.5'
 
-  # TODO: Move this into an environment variable later.
+  # TO DO: Move this into an environment variable later.
   # It's a free API key, don't really care so much
   # OPEN_WEATHER_API_KEY = '6a5917dc13787ed3bb5379766bae3970'
 
@@ -20,7 +20,6 @@ class WeatherReport
   end
 
   def current_temp
-
      c_temp = @response['main']['temp']
      (c_temp - 273.15).ceil
   end
@@ -52,13 +51,6 @@ class WeatherReport
   end
 
 end
-
-
-
-
-# Google Client ID: 298462781452-td4l2sq51m6enukkc54lj4jaad6cmke6.apps.googleusercontent.com
-# Google CLient Secret ID: tuqjrvKhxCOHEKAbJBTkeiJW
-
 
 
 #   base_uri 'lcboapi.com'

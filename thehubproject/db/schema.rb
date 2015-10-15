@@ -25,12 +25,12 @@ ActiveRecord::Schema.define(version: 20151014202929) do
 
   add_index "authentications", ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
 
-  create_table "instagrams", force: :cascade do |t|
+  create_table "emails", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "twitters", force: :cascade do |t|
+  create_table "instagrams", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
