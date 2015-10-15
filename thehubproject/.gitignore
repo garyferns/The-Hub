@@ -19,3 +19,4 @@
 # Ignore application configuration
 /config/application.yml
 /client_secret.json
+/config/secrets.yml
