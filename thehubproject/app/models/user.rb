@@ -24,4 +24,23 @@ class User < ActiveRecord::Base
   end
 
 
+  def instagram_client
+    instagram_authentication = self.authentications.find_by_provider("instagram")
+    if instagram_authentication
+    client = Instagram.client(:access_token => instagram_authentication.oauth)
+    end
+  end
+
+
+
+
+
+
+
+
+
+
+
+
+
 end

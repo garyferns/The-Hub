@@ -18,6 +18,9 @@ class OauthsController < ApplicationController
     redirect_to user_path(current_user), notice: notice
   end
 
+
+
+
   private
 
   def auth_params

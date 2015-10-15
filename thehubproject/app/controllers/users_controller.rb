@@ -31,20 +31,19 @@ class UsersController < ApplicationController
   end
 
   def show
+
     client = current_user.twitter_client
     if client
       @mentions = client.mentions_timeline
-    end
-
-    client = current_user.twitter_client
-    if client
       @user_timeline = client.user_timeline
-    end
-
-    client = current_user.twitter_client
-    if client
       @direct_messages = client.direct_messages
     end
+
+    insta_client = current_user.instagram_client
+    if insta_client
+      @feed = insta_client.user_media_feed
+    end
+
 
   end
 

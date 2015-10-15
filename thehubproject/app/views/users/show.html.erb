@@ -42,6 +42,18 @@ Edit your information <b><i><%= link_to 'here', edit_user_path(current_user) %><
 
 
 
+<p><h3>Instagram Feed</h3></p>
+<p>
+<% if @feed %>
+  <% @feed.each do |m| %>
+  <ul><%= "#{user.username}" %></ul>
+  <% end %>
+<% end %>
+</p>
+
+
+
+
 
 <br><p><h1>Edit Applications</h1></p></br>
 
