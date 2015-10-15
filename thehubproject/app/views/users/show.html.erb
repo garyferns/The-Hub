@@ -9,14 +9,36 @@
 Edit your information <b><i><%= link_to 'here', edit_user_path(current_user) %></i></b>
 </h4>
 
+<br></br>
 
-<% if @mentions%>
+<p><h3>Twitter Mentions</h3></p>
+<p>
+<% if @mentions %>
   <% @mentions.each do |m| %>
-  <%= m.text %>
+  <ul><%= "#{m.user.screen_name}: #{m.text}" %></ul>
   <% end %>
 <% end %>
+</p>
 
 
+<p><h3>Twitter Timeline</h3></p>
+<p>
+<% if @user_timeline %>
+  <% @user_timeline.each do |m| %>
+  <ul><%= "#{m.user.screen_name}: #{m.text}" %></ul>
+  <% end %>
+<% end %>
+</p>
+
+
+<p><h3>Twitter Direct Messages</h3></p>
+<p>
+<% if @direct_messages %>
+  <% @direct_messages.each do |m| %>
+  <ul><%= "#{m.attrs[:sender_screen_name]}: #{m.text}" %></ul>
+  <% end %>
+<% end %>
+</p>
 
 
 
