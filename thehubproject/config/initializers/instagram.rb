@@ -1,3 +1,6 @@
+require "instagram"
+
+
 Instagram.configure do |config|
 
   config.client_id = Figaro.env.inst_config_client_id

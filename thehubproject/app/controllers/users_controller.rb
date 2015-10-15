@@ -39,11 +39,15 @@ class UsersController < ApplicationController
       @direct_messages = client.direct_messages
     end
 
-    insta_client = current_user.instagram_client
-    if insta_client
-      @feed = insta_client.user_media_feed
-    end
+    @popular = Instagram.media_popular
 
+
+    # insta_client = current_user.instagram_client
+    # if insta_client
+    #   @feed = insta_client.user_media_feed
+    # end
+
+    # @instagram = Instagram.user_recent_media("current_user", {:count => 1}
 
   end
 

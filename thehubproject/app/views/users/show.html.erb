@@ -40,17 +40,19 @@ Edit your information <b><i><%= link_to 'here', edit_user_path(current_user) %><
 <% end %>
 </p>
 
+<br></br>
 
-
-<p><h3>Instagram Feed</h3></p>
-<p>
-<% if @feed %>
-  <% @feed.each do |m| %>
-  <ul><%= "#{user.username}" %></ul>
-  <% end %>
+<h1>Instagram Lookup</h1>
+  <% @popular.each do |popular| %>
+  <div class="col-sm-12 col-md-4">
+    <div class="thumbnail">
+      <%= image_tag popular.images.low_resolution.url %>
+      <div class="caption">
+        <%= popular.user.username %>
+      </div>
+    </div>
+  </div>
 <% end %>
-</p>
-
 
 
 

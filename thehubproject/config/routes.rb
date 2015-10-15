@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :user_sessions
   resources :twitter
   resources :instagram
+
   #get '/auth/:provider/callback', to: 'user_sessions#create'
 
   post "oauth/callback" => "oauths#callback"
