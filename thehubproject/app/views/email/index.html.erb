@@ -1,16 +1,1 @@
 <h1>Email#index</h1>
-
-  <!-- This line must be incuded in every Web Page that integrates google sign in -->
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-
-  <!-- <meta name="google-signin-client_id" content="<meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">"> -->
-
-  <div class="g-signin2" data-onsuccess="onSignIn"></div>
-
-<div>
-  <li>Email: <%= @email.get_email_list %> C </li>
-</div>
-
-<!-- For Gmail, the scope we need to use is: https://www.googleapis.com/auth/gmail.readonly
-We are not trying to compose messages in the app. We only want it there for notification purposes. -->
-

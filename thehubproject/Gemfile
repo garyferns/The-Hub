@@ -42,7 +42,7 @@ gem 'figaro'
 
 # Google's API
 gem 'gmail'
-# gem 'google-api-client'
+gem 'gmail_xoauth'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

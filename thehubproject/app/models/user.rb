@@ -23,5 +23,17 @@ class User < ActiveRecord::Base
     end
   end
 
+  def gmail_client
+    if gmail_authenitcation
+      gmail_authentication = self.authentications.find_by_provider("gmail")
+      gmail = Gmail.connect(:xoauth, self.gmail_address,
+        :token           => gmail_authentication.oauth_token,
+        :secret          => gmail_authentication.oauth_secret,
+        :consumer_key    => Figaro.env.google_client_id,
+        :consumer_secret => Figaro.env.google_client_secret_id
+        )
+    end
+    return gmail
+  end
 
 end
