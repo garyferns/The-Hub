@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    if @user.save
+    if @user.save && login(user_params[:email], user_params[:password])
       redirect_to root_path
     else
       render :new
@@ -35,6 +35,17 @@ class UsersController < ApplicationController
     if client
       @mentions = client.mentions_timeline
     end
+
+    client = current_user.twitter_client
+    if client
+      @user_timeline = client.user_timeline
+    end
+
+    client = current_user.twitter_client
+    if client
+      @direct_messages = client.direct_messages
+    end
+
   end
 
 
