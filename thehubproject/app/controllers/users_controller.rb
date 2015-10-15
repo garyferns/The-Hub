@@ -31,6 +31,10 @@ class UsersController < ApplicationController
   end
 
   def show
+    client = current_user.twitter_client
+    if client
+      @mentions = client.mentions_timeline
+    end
   end
 
 

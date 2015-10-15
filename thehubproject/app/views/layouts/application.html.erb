@@ -7,7 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class="notice">
+   <%= flash[:notice] %>
+</div>
+<div class="alert">
+   <%= flash[:alert] %>
+</div>
 <div>
  <% if current_user %>
       <%= link_to "Profile", user_profile_path %>

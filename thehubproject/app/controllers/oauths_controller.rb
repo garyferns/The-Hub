@@ -13,9 +13,9 @@ class OauthsController < ApplicationController
       auth.oauth_token = @access_token.token
       auth.oauth_secret = @access_token.secret
       auth.save
-      flash[:notice] = "Linked up with #{params[:provider]}!"
+      notice = "Linked up with #{params[:provider]}!"
     end
-    redirect_to user_path(current_user)
+    redirect_to user_path(current_user), notice: notice
   end
 
   private
@@ -27,3 +27,36 @@ class OauthsController < ApplicationController
 end
 
 
+
+#   skip_before_filter :require_login
+
+#   # sends the user on a trip to the provider,
+#   # and after authorizing there back to the callback url.
+#   def oauth
+#     login_at(params[:provider])
+#   end
+
+#   def callback
+#     # NOTE - will return nil if authentication already exists for current user & provider
+#     authentication = add_provider_to_user(params[:provider])
+#     if authentication.blank?
+#       authentication = current_user.authentications.find_by_provider(params[:provider])
+#     end
+#     if authentication
+#       authentication.oauth_token = params[:oauth_token]
+#       authentication.oauth_secret = params[:oauth_verifier]
+#       authentication.save
+#     end
+#     redirect_to root_path, notice: "Authenticated with #{params[:provider]}!"
+#   end
+
+#   #example for Rails 4: add private method below and use "auth_params[:provider]" in place of
+#   #"params[:provider] above.
+
+#   private
+
+#   def auth_params
+#     params.permit(:code, :provider)
+#   end
+
+# end

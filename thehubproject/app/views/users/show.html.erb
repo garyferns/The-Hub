@@ -6,8 +6,16 @@
 <p><b>Email:</b> <%= current_user.email %> </p>
 
 <h4>
-Edit your information <b><i><%= link_to 'here', edit_user_path %></i></b>
+Edit your information <b><i><%= link_to 'here', edit_user_path(current_user) %></i></b>
 </h4>
+
+
+<% if @mentions%>
+  <% @mentions.each do |m| %>
+  <%= m.text %>
+  <% end %>
+<% end %>
+
 
 
 

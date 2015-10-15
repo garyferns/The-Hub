@@ -5,11 +5,12 @@ Rails.application.routes.draw do
 
   #get 'oauths/callback'
 
-  get 'email/index'
+  # get 'email/index'
 
 
   root 'users#index'
-  resources :users, except: [:show, :edit]
+  resources :users
+  # , except: [:show, :edit]
   get 'user_profile' => 'users#show'
   get 'edit_user' => 'users#edit'
 

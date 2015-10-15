@@ -4,9 +4,7 @@ class UserSessionsController < ApplicationController
   end
 
   def create
-    #puts "----------------"
-    #puts request.env['omniauth.auth']
-    #puts "----------------"
+
 
     if @user = login(params[:email], params[:password])
       redirect_back_or_to(root_path, notice: 'Login successful')
@@ -18,9 +16,7 @@ class UserSessionsController < ApplicationController
 
   def destroy
     session.clear
-    puts "*************"
-    puts
-    puts "*************"
+
 
     redirect_to new_user_session_path
   end
