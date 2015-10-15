@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151013185009) do
+ActiveRecord::Schema.define(version: 20151014202929) do
+
+  create_table "authentications", force: :cascade do |t|
+    t.integer  "user_id",      null: false
+    t.string   "provider",     null: false
+    t.string   "uid",          null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "oauth_token"
+    t.string   "oauth_secret"
+  end
+
+  add_index "authentications", ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
 
   create_table "instagrams", force: :cascade do |t|
     t.datetime "created_at", null: false

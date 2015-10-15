@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :require_login, only: [:show, :edit, :update]
+  before_action :require_login, except: [:new, :create]
 
   def index
     @user = User.all
@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = current_user
   end
 
   def update
@@ -30,12 +31,6 @@ class UsersController < ApplicationController
   end
 
   def show
-
-    @mentions = $twitter.mentions_timeline
-    @messages = $twitter.direct_messages
-
-
-
   end
 
 

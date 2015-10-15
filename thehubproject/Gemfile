@@ -33,9 +33,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'instagram'
 
 # Using Twitter gem
-gem 'twitter'
-gem 'omniauth-twitter'
-
+gem 'twitter', '5.14.0'
+# gem 'omniauth-twitter'
+gem 'oauth'
 
 # Using Figaro Gem
 gem 'figaro'
