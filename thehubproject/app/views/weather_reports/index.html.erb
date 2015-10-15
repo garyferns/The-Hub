@@ -1,13 +1,15 @@
 <h1>Weather Report</h1>
 
-<%= stylesheet_link_tag ("weather_view.css") %>
+<h3>Weather in Cairo</h3>
 
-<p id = "1">
+<div class='report'>
+<ol>
   <li>The current temperature is <%= @weather_report.current_temp %> C </li>
   <li>The high for today is <%= @weather_report.max_temp %> C </li>
   <li>The low for the day is <%= @weather_report.min_temp %> C </li>
   <li>It wll be  <%= @weather_report.cloud_cover %> today</li>
-</p>
+</ol>
+</div>
 
 <!-- <p>
   The complete information that we recieved is <%= @weather_report.complete_info %>
