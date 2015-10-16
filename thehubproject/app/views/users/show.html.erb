@@ -50,9 +50,14 @@
 
 <div class="box">
   <p><h3><u>Facebook</u></h3></p>
-
   <% if @facebook_profile %>
     <%= @facebook_profile.inspect %>
+  <% end %>
+
+  <% if @feed %>
+    <% @feed.each do |item| %>
+      <p><%= item["message"] %></p>
+    <% end %>
   <% end %>
 </div>
 
