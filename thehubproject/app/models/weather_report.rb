@@ -2,14 +2,10 @@ require "open-uri"
 require "json"
 
 
-
 class WeatherReport
   include HTTParty
   base_uri 'api.openweathermap.org/data/2.5'
 
-  # TO DO: Move this into an environment variable later.
-  # It's a free API key, don't really care so much
-  # OPEN_WEATHER_API_KEY = '6a5917dc13787ed3bb5379766bae3970'
 
   def initialize(city)
     @city = city
@@ -51,21 +47,3 @@ class WeatherReport
   end
 
 end
-
-
-#   base_uri 'lcboapi.com'
-
-#   def self.all
-#     get('/products')['result']
-#   end
-
-#   def self.find(product_id)
-#     get("/products/#{product_id}")['result']
-#   end
-
-#  def get_weather
-#    get('/weather?q=#{city_name},#{country_name = ''}')['result']
-#  end
-# end
-
-# binding.pry

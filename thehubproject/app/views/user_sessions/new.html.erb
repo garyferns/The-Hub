@@ -1,4 +1,5 @@
 <h1>Log In</h1>
+<<<<<<< HEAD
 
 <%= stylesheet_link_tag 'user_sessions_new' %>
 
@@ -15,8 +16,37 @@
     <div class="actions">
       <%= submit_tag "Login" %>
     </div>
+=======
+
+
+<%= form_tag user_sessions_path, :method => :post do %>
+  <div class="field">
+    <%= label_tag :email %><br />
+    <%= text_field_tag :email %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :password %><br />
+    <%= password_field_tag :password %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :city %><br />
+    <%= text_field_tag :city %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag "Login" %>
+  </div>
+<% end %>
+>>>>>>> Gmail_Integration
 
 <p>Signup instead <%= link_to 'here', new_user_path %>
 </p>
 
+<<<<<<< HEAD
 <% end %>
+=======
+
+
+>>>>>>> Gmail_Integration

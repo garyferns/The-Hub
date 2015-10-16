@@ -3,14 +3,10 @@
 <h3>Weather in Cairo</h3>
 
 <div class='report'>
-<ol>
-  <li>The current temperature is <%= @weather_report.current_temp %> C </li>
-  <li>The high for today is <%= @weather_report.max_temp %> C </li>
-  <li>The low for the day is <%= @weather_report.min_temp %> C </li>
+<ul>
+  <li>Current Temperature is <%= @weather_report.current_temp %> C </li>
+  <li> High <%= @weather_report.max_temp %> C </li>
+  <li> Low <%= @weather_report.min_temp %> C </li>
   <li>It wll be  <%= @weather_report.cloud_cover %> today</li>
-</ol>
+</ul>
 </div>
-
-<!-- <p>
-  The complete information that we recieved is <%= @weather_report.complete_info %>
-</p> -->

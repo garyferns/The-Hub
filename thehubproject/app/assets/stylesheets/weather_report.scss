@@ -4,10 +4,20 @@
 */
 
 body {
+<<<<<<< HEAD
   font-family: "Times New Roman", "Times", "serif";
   background: #e5e5e5;
 }
+=======
+  font-family: "Times New Roman", "Comic Sans MS", "serif";
+>>>>>>> Gmail_Integration
 
+    background-color: #e5e5e5;
+    background-image: url("test_back_image");
+    background-repeat: no-repeat;
+    background-position: right top;
+
+}
 .report {
   background-color: white;
  }

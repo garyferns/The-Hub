@@ -1,15 +1,22 @@
 <center>
+  <div class="header">
+    <h1>The Hub Homepage</h1>
 
-<h1>The Hub Homepage</h1>
-
-<p>Welcome to <b>The Hub</b></p>
-
+    <p>Welcome to <b>The Hub</b></p>
+  </div>
 </center>
 
 
+<<<<<<< HEAD
 
 <%= link_to 'Authenticate with Twitter', auth_at_provider_path(:provider => :twitter) %> |
 
 <%= link_to 'Authenticate with Instagram', auth_at_provider_path(:provider => :instagram) %> |
 
 <%= link_to 'Authenticate with Google', auth_at_provider_path(:provider => :google) %> |
+=======
+<div class="links">
+<%= link_to 'Authenticate with Twitter', auth_at_provider_path(:provider => :twitter) %>
+<%= link_to 'Auth with Google', auth_at_provider_path(:provider => :google) %>
+</div>
+>>>>>>> Gmail_Integration
