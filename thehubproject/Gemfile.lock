@@ -70,7 +70,6 @@ GEM
       mail (>= 2.2.1)
     gmail_xoauth (0.4.1)
       oauth (>= 0.3.6)
-<<<<<<< HEAD
     google-api-client (0.8.6)
       activesupport (>= 3.2)
       addressable (~> 2.3)
@@ -89,8 +88,6 @@ GEM
       memoist (~> 0.12)
       multi_json (~> 1.11)
       signet (~> 0.6)
-=======
->>>>>>> Gmail_Integration
     hashie (3.4.2)
     http (0.6.4)
       http_parser.rb (~> 0.6.0)
@@ -113,8 +110,6 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.3)
     jwt (1.5.1)
-<<<<<<< HEAD
-=======
     koala (2.2.0)
       addressable
       faraday
@@ -125,7 +120,6 @@ GEM
     logging (2.0.0)
       little-plugger (~> 1.1)
       multi_json (~> 1.10)
->>>>>>> 184eeac535b3fd2d2821ce1803da9ffabfeb9ac4
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -244,11 +238,8 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   figaro
   gmail
-<<<<<<< HEAD
-  google-api-client
-=======
   gmail_xoauth
->>>>>>> Gmail_Integration
+  google-api-client
   httparty
   instagram
   jbuilder (~> 2.0)
