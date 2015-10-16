@@ -113,6 +113,19 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.3)
     jwt (1.5.1)
+<<<<<<< HEAD
+=======
+    koala (2.2.0)
+      addressable
+      faraday
+      multi_json
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    little-plugger (1.1.4)
+    logging (2.0.0)
+      little-plugger (~> 1.1)
+      multi_json (~> 1.10)
+>>>>>>> 184eeac535b3fd2d2821ce1803da9ffabfeb9ac4
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -240,7 +253,7 @@ DEPENDENCIES
   instagram
   jbuilder (~> 2.0)
   jquery-rails
-  oauth
+  koala
   pry-rails
   rails (= 4.2.4)
   sass-rails (~> 5.0)

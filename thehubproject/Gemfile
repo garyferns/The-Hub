@@ -34,20 +34,18 @@ gem 'instagram'
 
 # Using Twitter gem
 gem 'twitter', '5.14.0'
-# gem 'omniauth-twitter'
-gem 'oauth'
+
+# Using Facebook Gem
+gem 'koala'
 
 # Using Figaro Gem
 gem 'figaro'
 
 # Google's API
 gem 'gmail'
-<<<<<<< HEAD
 gem 'google-api-client'
-=======
 gem 'gmail_xoauth'
 
->>>>>>> Gmail_Integration
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

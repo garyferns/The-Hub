@@ -16,13 +16,22 @@ class User < ActiveRecord::Base
   def twitter_client
     twitter_authentication = self.authentications.find_by_provider("twitter")
     if twitter_authentication
-      twitter = Twitter::REST::Client.new do |config|
+      twitter_api_client = Twitter::REST::Client.new do |config|
         config.consumer_key = Figaro.env.tw_consumer_key
         config.consumer_secret = Figaro.env.tw_consumer_secret
-        config.access_token = twitter_authentication.oauth_token
-        config.access_token_secret = twitter_authentication.oauth_secret
+        config.access_token = twitter_authentication.access_token
+        config.access_token_secret = twitter_authentication.access_secret
       end
-      return twitter
+      return twitter_api_client
+    end
+  end
+
+
+  def facebook_client
+    facebook_authentication = self.authentications.find_by_provider("facebook")
+    if facebook_authentication
+      facebook_api_client = Koala::Facebook::API.new(facebook_authentication.access_token)
+      return facebook_api_client
     end
   end
 
@@ -49,6 +58,8 @@ class User < ActiveRecord::Base
     )
 
   end
+
+
 
 
 
