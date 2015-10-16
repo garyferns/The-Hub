@@ -70,6 +70,11 @@ GEM
       thor (~> 0.14)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    gmail (0.6.0)
+      gmail_xoauth (>= 0.3.0)
+      mail (>= 2.2.1)
+    gmail_xoauth (0.4.1)
+      oauth (>= 0.3.6)
     google-api-client (0.8.6)
       activesupport (>= 3.2)
       addressable (~> 2.3)
@@ -241,6 +246,7 @@ DEPENDENCIES
   cocoon
   coffee-rails (~> 4.1.0)
   figaro
+  gmail
   google-api-client
   httparty
   instagram

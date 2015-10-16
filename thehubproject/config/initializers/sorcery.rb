@@ -76,7 +76,7 @@ Rails.application.config.sorcery.configure do |config|
   # What providers are supported by this app, i.e. [:twitter, :facebook, :github, :linkedin, :xing, :google, :liveid, :salesforce] .
   # Default: `[]`
   #
-  config.external_providers = [:twitter]
+  config.external_providers = [:twitter, :google]
 
   # You can change it by your local ca_file. i.e. '/etc/pki/tls/certs/ca-bundle.crt'
   # Path to ca_file. By default use a internal ca-bundle.crt.
@@ -127,10 +127,10 @@ Rails.application.config.sorcery.configure do |config|
   # config.github.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=github"
   # config.github.user_info_mapping = {:email => "name"}
   #
-  # config.google.key = ""
-  # config.google.secret = ""
-  # config.google.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=google"
-  # config.google.user_info_mapping = {:email => "email", :username => "name"}
+  config.google.key = Figaro.env.google_client_id
+  config.google.secret = Figaro.env.google_client_secret_id
+  config.google.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=google"
+  config.google.user_info_mapping = {:email => "email", :username => "name"}
   #
   # config.vk.key = ""
   # config.vk.secret = ""

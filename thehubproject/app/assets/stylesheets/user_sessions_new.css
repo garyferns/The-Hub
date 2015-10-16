@@ -1,0 +1,41 @@
+form {
+  position: relative;
+  font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+  background: rgb(255, 140, 25);
+  border: 1px solid gray;
+  height: 323px;
+  width: 390px;
+  max-width: 470px;
+  padding-top: 20px;
+
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: auto ;
+  margin-right: auto ;
+
+  line-height: 24px;
+  color: rgb(0,0,0); /*This is the font colour*/
+}
+
+input {
+  width: 200px;
+  display: block;
+  height: 20px;
+  border: 1px solid #999;
+  margin-left: auto ;
+  margin-right: auto ;
+}
+
+
+
+.actions {
+  width:200px;
+  height: 20px;
+  position:relative;
+   margin-left: auto ;
+  margin-right: auto ;
+  margin-top: 20px;
+  }

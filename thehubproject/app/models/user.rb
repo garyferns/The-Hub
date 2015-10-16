@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 
+
   authenticates_with_sorcery!
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes["password"] }
@@ -9,6 +10,8 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
 
   has_many :authentications, :dependent => :destroy
+
+  require 'gmail'
 
   def twitter_client
     twitter_authentication = self.authentications.find_by_provider("twitter")
@@ -24,23 +27,24 @@ class User < ActiveRecord::Base
   end
 
 
+  def google_client
+
+    gmail = Gmail.connect(:xoauth, "gareth.fernandes7@gmail.com",
+      :token           => 'google_authentication.oauth_token',
+      :secret          => 'google_authentication.oauth_secret',
+      :consumer_key    => 'Figaro.env.google_client_id',
+      :consumer_secret => 'Figaro.env.google_client_secret_id'
+    )
+
+  end
+
+
+
   # def instagram_client
   #   instagram_authentication = self.authentications.find_by_provider("instagram")
   #   if instagram_authentication
   #   client = Instagram.client(:access_token => instagram_authentication.oauth)
   #   end
   # end
-
-
-
-
-
-
-
-
-
-
-
-
 
 end
