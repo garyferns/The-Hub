@@ -34,11 +34,9 @@ gem 'instagram'
 
 # Using Twitter gem
 gem 'twitter', '5.14.0'
-# gem 'omniauth-twitter'
-gem 'oauth'
 
 # Using Facebook Gem
-gem 'omniauth-facebook'
+gem 'koala'
 
 # Using Figaro Gem
 gem 'figaro'

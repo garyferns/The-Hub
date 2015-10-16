@@ -39,14 +39,15 @@ class UsersController < ApplicationController
       @direct_messages = client.direct_messages
     end
 
-    # face_client = current_user.fb_client
-    # if face_client
-    #   @first_name = face_client.first_name
-    # end
+    face_client = current_user.facebook_client
+    if face_client
+      @facebook_profile = face_client.get_object("me")
+    end
 
+    @weather_report = WeatherReport.new("Cairo")
+    @weather_report.get_report
 
     # @popular = Instagram.media_popular
-
 
     # insta_client = current_user.instagram_client
     # if insta_client

@@ -10,8 +10,8 @@ class OauthsController < ApplicationController
     add_provider_to_user(params[:provider])
     auth = current_user.authentications.find_by_provider(params[:provider])
     if auth
-      auth.oauth_token = @access_token.token
-      auth.oauth_secret = @access_token.secret
+      auth.access_token = @access_token.token
+      auth.access_secret = @access_token.secret if params[:provider] == "twitter"
       auth.save
       notice = "Linked up with #{params[:provider]}!"
     end
