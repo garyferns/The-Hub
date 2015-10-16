@@ -1,63 +1,71 @@
 <center>
-<br><h1>Profile</h1></br>
+    <br><h1>Profile</h1></br>
 
-<p><b>First Name:</b> <%= current_user.first_name %> </p>
-<p><b>Last Name:</b> <%= current_user.last_name %> </p>
-<p><b>Email:</b> <%= current_user.email %> </p>
+  <div class="headings">
+    <p><b>First Name:</b> <%= current_user.first_name %> </p>
+    <p><b>Last Name:</b> <%= current_user.last_name %> </p>
+    <p><b>Email:</b> <%= current_user.email %> </p>
 
-<h4>
-Edit your information <b><i><%= link_to 'here', edit_user_path(current_user) %></i></b>
-</h4>
-
-<br></br>
-
-<p><h3>Twitter Mentions</h3></p>
-<p>
-<% if @mentions %>
-  <% @mentions.each do |m| %>
-  <ul><%= "#{m.user.screen_name}: #{m.text}" %></ul>
-  <% end %>
-<% end %>
-</p>
+    <h4>
+    Edit your information <b><i><%= link_to 'here', edit_user_path(current_user) %></i></b>
+    </h4>
+  </div>
 
 
-<p><h3>Twitter Timeline</h3></p>
-<p>
-<% if @user_timeline %>
-  <% @user_timeline.each do |m| %>
-  <ul><%= "#{m.user.screen_name}: #{m.text}" %></ul>
-  <% end %>
-<% end %>
-</p>
+  <br></br>
+
+  <div class="box">
+    <p><h3>Twitter Mentions</h3></p>
+    <p class="tweet">
+    <% if @mentions %>
+      <% @mentions.each do |m| %>
+      <ul class="message"><%= "#{m.user.screen_name}: #{m.text}" %></ul>
+      <% end %>
+    <% end %>
+    </p>
 
 
-<p><h3>Twitter Direct Messages</h3></p>
-<p>
-<% if @direct_messages %>
-  <% @direct_messages.each do |m| %>
-  <ul><%= "#{m.attrs[:sender_screen_name]}: #{m.text}" %></ul>
-  <% end %>
-<% end %>
-</p>
+    <p><h3>Twitter Timeline</h3></p>
+    <p class="tweet">
+    <% if @user_timeline %>
+      <% @user_timeline.each do |m| %>
+      <ul class="message"><%= "#{m.user.screen_name}: #{m.text}" %></ul>
+      <% end %>
+    <% end %>
+    </p>
 
 
+    <p><h3>Twitter Direct Messages</h3></p>
+    <p class="tweet">
+    <% if @direct_messages %>
+      <% @direct_messages.each do |m| %>
+      <ul class="message"><%= "#{m.attrs[:sender_screen_name]}: #{m.text}" %></ul>
+      <% end %>
+    <% end %>
+    </p>
+
+  </div>
+
+<br>
+<br>
 
 
-<br><p><h1>Edit Applications</h1></p></br>
-
-
-
-<br><p><b>Add a widget</b></p>
-<p> * DROP DOWN WILL APPEAR * </p></br>
-
-
-
-<br><p><b>Remove a widget</b></p>
-<p> * DROP DOWN WILL APPEAR * </p></br>
+  <div class="test">
+    <br><p><h1>Edit Applications</h1></p></br>
 
 
 
+    <br><p><b>Add a widget</b></p>
+    <p> * DROP DOWN WILL APPEAR * </p></br>
 
 
-<b><%= link_to 'Back', root_path %></b>
+
+    <br><p><b>Remove a widget</b></p>
+    <p> * DROP DOWN WILL APPEAR * </p></br>
+
+  </div>
+
+
+
+  <b><%= link_to 'Back', root_path %></b>
 </center>

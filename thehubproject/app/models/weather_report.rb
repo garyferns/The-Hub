@@ -6,6 +6,7 @@ class WeatherReport
   include HTTParty
   base_uri 'api.openweathermap.org/data/2.5'
 
+
   def initialize(city)
     @city = city
   end

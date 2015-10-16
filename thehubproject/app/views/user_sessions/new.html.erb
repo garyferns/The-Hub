@@ -1,15 +1,22 @@
-<h1>UserSessions#new</h1>
-<p>Find me in app/views/user_sessions/new.html.erb</p>
+<h1>Log In</h1>
+
 
 <%= form_tag user_sessions_path, :method => :post do %>
   <div class="field">
     <%= label_tag :email %><br />
     <%= text_field_tag :email %>
   </div>
+
   <div class="field">
     <%= label_tag :password %><br />
     <%= password_field_tag :password %>
   </div>
+
+  <div class="field">
+    <%= label_tag :city %><br />
+    <%= text_field_tag :city %>
+  </div>
+
   <div class="actions">
     <%= submit_tag "Login" %>
   </div>
@@ -17,3 +24,6 @@
 
 <p>Signup instead <%= link_to 'here', new_user_path %>
 </p>
+
+
+
