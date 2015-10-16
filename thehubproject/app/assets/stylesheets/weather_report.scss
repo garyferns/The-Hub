@@ -5,9 +5,13 @@
 
 body {
   font-family: "Times New Roman", "Comic Sans MS", "serif";
-  background: rgb(153,255,153);
-}
 
+    background-color: #e5e5e5;
+    background-image: url("test_back_image");
+    background-repeat: no-repeat;
+    background-position: right top;
+
+}
 .report {
   background-color: yellow;
  }
