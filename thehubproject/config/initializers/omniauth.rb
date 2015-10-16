@@ -6,3 +6,9 @@
 #     :image_size => "original" # The default is original, but you can change it to square. Pass it a value for pixels
 #     }
 # end
+
+# OmniAuth.config.logger = Rails.logger
+
+# Rails.application.config.middleware.use OmniAuth::Builder do
+#   provider :facebook, Figaro.env.fb_app_id, Figaro.env.fb_app_secret
+# end

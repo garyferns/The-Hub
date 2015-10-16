@@ -21,6 +21,8 @@ class OauthsController < ApplicationController
 
 
 
+
+
   private
 
   def auth_params
