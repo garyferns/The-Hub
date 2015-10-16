@@ -76,7 +76,7 @@ Rails.application.config.sorcery.configure do |config|
   # What providers are supported by this app, i.e. [:twitter, :facebook, :github, :linkedin, :xing, :google, :liveid, :salesforce] .
   # Default: `[]`
   #
-  config.external_providers = [:twitter]
+  config.external_providers = [:twitter, :facebook]
 
   # You can change it by your local ca_file. i.e. '/etc/pki/tls/certs/ca-bundle.crt'
   # Path to ca_file. By default use a internal ca-bundle.crt.
@@ -114,13 +114,13 @@ Rails.application.config.sorcery.configure do |config|
   config.twitter.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=twitter"
   config.twitter.user_info_mapping = {:email => "screen_name"}
 
-  # config.facebook.key = ""
-  # config.facebook.secret = ""
-  # config.facebook.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=facebook"
-  # config.facebook.user_info_mapping = {:email => "name"}
-  # config.facebook.access_permissions = ["email", "publish_actions"]
-  # config.facebook.display = "page"
-  # config.facebook.api_version = "v2.2"
+  config.facebook.key = Figaro.env.fb_app_id
+  config.facebook.secret = Figaro.env.fb_app_secret
+  config.facebook.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=facebook"
+  config.facebook.user_info_mapping = {:email => "name"}
+  config.facebook.access_permissions = ["email", "publish_actions"]
+  config.facebook.display = "page"
+  config.facebook.api_version = "v2.2"
   #
   # config.github.key = ""
   # config.github.secret = ""

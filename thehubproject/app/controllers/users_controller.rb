@@ -39,7 +39,13 @@ class UsersController < ApplicationController
       @direct_messages = client.direct_messages
     end
 
-    @popular = Instagram.media_popular
+    # face_client = current_user.fb_client
+    # if face_client
+    #   @first_name = face_client.first_name
+    # end
+
+
+    # @popular = Instagram.media_popular
 
 
     # insta_client = current_user.instagram_client

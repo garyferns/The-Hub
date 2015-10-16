@@ -1,10 +1,10 @@
-require "instagram"
+# require "instagram"
 
 
-Instagram.configure do |config|
+# Instagram.configure do |config|
 
-  config.client_id = Figaro.env.inst_config_client_id
+#   config.client_id = Figaro.env.inst_config_client_id
 
-  config.access_token = Figaro.env.inst_config_access_token
+#   config.access_token = Figaro.env.inst_config_access_token
 
-end
+# end

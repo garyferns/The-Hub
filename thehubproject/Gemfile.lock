@@ -140,6 +140,14 @@ GEM
       multi_json (~> 1.3)
       multi_xml (~> 0.5)
       rack (~> 1.2)
+    omniauth (1.2.2)
+      hashie (>= 1.2, < 4)
+      rack (~> 1.0)
+    omniauth-facebook (2.0.1)
+      omniauth-oauth2 (~> 1.2)
+    omniauth-oauth2 (1.3.1)
+      oauth2 (~> 1.0)
+      omniauth (~> 1.2)
     pry (0.10.2)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -247,6 +255,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   oauth
+  omniauth-facebook
   pry-rails
   rails (= 4.2.4)
   sass-rails (~> 5.0)

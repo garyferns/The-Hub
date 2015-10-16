@@ -24,6 +24,21 @@ class User < ActiveRecord::Base
   end
 
 
+  def fb_client
+    facebook_authentication = self.authentications.find_by_provider("facebook")
+    if facebook_authentication
+      facebook = Facebook::REST::Client.new do |config|
+        config.app_id = Figaro.env.app_id
+        config.app_secret = Figaro.env.app_secret
+        config.access_token = facebook_authentication.oauth_secret
+        config.access_token_secret = facebook_authentication.oauth_secret
+      end
+      return facebook
+    end
+  end
+
+
+
   # def instagram_client
   #   instagram_authentication = self.authentications.find_by_provider("instagram")
   #   if instagram_authentication
