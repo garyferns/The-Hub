@@ -1,5 +1,6 @@
+
 <center>
-<br><h1>Profile</h1></br>
+<br><h1><u>Profile</u></h1></br>
 
 <p><b>First Name:</b> <%= current_user.first_name %> </p>
 <p><b>Last Name:</b> <%= current_user.last_name %> </p>
@@ -11,7 +12,8 @@ Edit your information <b><i><%= link_to 'here', edit_user_path(current_user) %><
 
 <br></br>
 
-<p><h3>Twitter Mentions</h3></p>
+
+</p><p><h3><u>Twitter Mentions</u></h3></p>
 <p>
 <% if @mentions %>
   <% @mentions.each do |m| %>
@@ -21,7 +23,7 @@ Edit your information <b><i><%= link_to 'here', edit_user_path(current_user) %><
 </p>
 
 
-<p><h3>Twitter Timeline</h3></p>
+<p><h3><u>Twitter Timeline</u></h3></p>
 <p>
 <% if @user_timeline %>
   <% @user_timeline.each do |m| %>
@@ -31,11 +33,11 @@ Edit your information <b><i><%= link_to 'here', edit_user_path(current_user) %><
 </p>
 
 
-<p><h3>Twitter Direct Messages</h3></p>
+<p><h3><u>Twitter Direct Messages</u></h3></p>
 <p>
 <% if @direct_messages %>
   <% @direct_messages.each do |m| %>
-  <ul><%= "#{m.attrs[:sender_screen_name]}: #{m.text}" %></ul>
+  <ul><b><%= "#{m.attrs[:sender_screen_name]}:"%></b> <%="#{m.text}"%></ul>
   <% end %>
 <% end %>
 </p>
@@ -43,22 +45,31 @@ Edit your information <b><i><%= link_to 'here', edit_user_path(current_user) %><
 <br></br>
 
 
+
+
+
+
+<p><h3><u>Facebook</u></h3></p>
+
+
 <% if @facebook_profile %>
   <%= @facebook_profile.inspect %>
-  <% end %>
+<% end %>
 
 
-<h1>Weather Report</h1>
 
-<h3>Weather in Cairo</h3>
+
+<br></br>
+
+<p><h3><u>Weather Report</u></h3></p>
+
+<h4>Weather in Cairo</h4>
 
 <div class='report'>
-<ol>
-  <li>The current temperature is <%= @weather_report.current_temp %> C </li>
-  <li>The high for today is <%= @weather_report.max_temp %> C </li>
-  <li>The low for the day is <%= @weather_report.min_temp %> C </li>
-  <li>It wll be  <%= @weather_report.cloud_cover %> today</li>
-</ol>
+<p>The current temperature is <b><%= @weather_report.current_temp %> C </b></p>
+<p>The high for today is <b><%= @weather_report.max_temp %> C </b></p>
+<p>The low for the day is <b><%= @weather_report.min_temp %> C </b></p>
+<p>It will be <b><%= @weather_report.cloud_cover %></b> today</p>
 </div>
 
 <!-- <p>
@@ -84,4 +95,6 @@ Edit your information <b><i><%= link_to 'here', edit_user_path(current_user) %><
 
 
 <b><%= link_to 'Back', root_path %></b>
+
+<br></br>
 </center>

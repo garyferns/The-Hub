@@ -1,3 +1,4 @@
+
 class UsersController < ApplicationController
 
   before_action :require_login, except: [:new, :create]
@@ -30,6 +31,8 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
+
+
   def show
 
     client = current_user.twitter_client
@@ -39,22 +42,16 @@ class UsersController < ApplicationController
       @direct_messages = client.direct_messages
     end
 
+
     face_client = current_user.facebook_client
     if face_client
       @facebook_profile = face_client.get_object("me")
+    #   @feed = face_client.get_connections("me", "feed")
     end
+
 
     @weather_report = WeatherReport.new("Cairo")
     @weather_report.get_report
-
-    # @popular = Instagram.media_popular
-
-    # insta_client = current_user.instagram_client
-    # if insta_client
-    #   @feed = insta_client.user_media_feed
-    # end
-
-    # @instagram = Instagram.user_recent_media("current_user", {:count => 1}
 
   end
 
