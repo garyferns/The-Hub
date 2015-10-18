@@ -46,11 +46,12 @@ class UsersController < ApplicationController
     face_client = current_user.facebook_client
     if face_client
       @facebook_profile = face_client.get_object("me")
-    #   @feed = face_client.get_connections("me", "feed")
+      @feed = face_client.get_connections("me", "feed")
     end
 
 
     @weather_report = WeatherReport.new("Tokyo")
+
     @weather_report.get_report
 
   end
