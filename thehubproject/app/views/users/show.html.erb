@@ -1,4 +1,7 @@
 
+
+
+
 <center>
   <br><h1><u>Profile</u></h1></br>
     <div class="headings">
@@ -11,7 +14,7 @@
       </h4>
     </div>
 
-    <br></br>
+</br>
 
 
 <div class="box">
@@ -26,6 +29,8 @@
   </p>
   </div>
 
+  <br>
+
 <div class="box">
   <p><h3><u>Twitter Timeline</u></h3></p>
   <p class="tweet">
@@ -37,6 +42,9 @@
   </p>
   </div>
 
+<br>
+
+
 <div class="box">
   <p><h3><u>Twitter Direct Messages</u></h3></p>
   <p class="tweet">
@@ -46,10 +54,11 @@
     <% end %>
   <% end %>
   </p>
-  <br></br>
+
 
 </div>
 
+  <br>
 
 <div class="box">
   <p><h3><u>Facebook</u></h3></p>
@@ -59,32 +68,31 @@
   <% end %>
 </div>
 
-
-  <br>
   <br>
 
 
-<div class="weather">
+  <div class='box'>
   <p><h3><u>Weather Report</u></h3></p>
 
   <h4>Weather in Cairo</h4>
 
-  <div class='report'>
   <p>The current temperature is <b><%= @weather_report.current_temp %> C </b></p>
   <p>The high for today is <b><%= @weather_report.max_temp %> C </b></p>
   <p>The low for the day is <b><%= @weather_report.min_temp %> C </b></p>
   <p>It will be <b><%= @weather_report.cloud_cover %></b> today</p>
   </div>
 
-</div>
-  <!-- <p>
-    The complete information that we recieved is <%= @weather_report.complete_info %>
-  </p> -->
+  <br>
+
+  <div class="box">
+  <p><h3><u>Gmail</u></h3></p>
+<%#= gmail.inbox.count %>
+  </div>
+
+  <br>
 
   <!--
-
   <br><p><h1>Edit Applications</h1></p></br>
-
 
     <div class="test">
       <br><p><h1>Edit Applications</h1></p></br>
@@ -118,5 +126,6 @@
   <br></br>
 
 
-
 </center>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="user_show_script.js"></script>

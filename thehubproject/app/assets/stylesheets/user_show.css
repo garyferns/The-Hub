@@ -1,3 +1,15 @@
+body {
+  font-family: "Times New Roman", "Times", "serif";
+  background-color: #e5e5e5;
+  background-image: url("test_back_image");
+  background-repeat: repeat-y;
+  background-position: right top;
+}
+
+.report {
+  background-color: white;
+ }
+
 
 .box{
   word-wrap: normal,
@@ -10,11 +22,12 @@
   margin: 10px;
 
   width: 300px;
-  height: 500px;
+  max-height: 500px;
+  min-height: 200px;
   overflow: scroll;
 }
 
-.weather{
+/*.weather{
  word-wrap: normal;
   position: relative;
   font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
@@ -26,7 +39,7 @@
   width: 300px;
   height: 300px;
   overflow: scroll;
-}
+}*/
 
 .tweet{
   /*border: 1px solid black;*/
@@ -37,25 +50,3 @@ border: 1px solid gray;
 margin: 1px;
 background: -webkit-linear-gradient(#f3f3f3, #ffffff);
 }
-
-/*form {
-  position: relative;
-  font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
-  font-size: 16px;
-  text-align: center;
-  font-weight: bold;
-  background: #e5e5e5;
-  border: 1px solid gray;
-  height: 323px;
-  width: 390px;
-  max-width: 470px;
-  padding-top: 20px;
-
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: auto ;
-  margin-right: auto ;
-
-  line-height: 24px;
-  color: rgb(0,0,0); /*This is the font colour*/
-}*/

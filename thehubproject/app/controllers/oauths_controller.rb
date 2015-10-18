@@ -7,6 +7,7 @@ class OauthsController < ApplicationController
   end
 
   def callback
+
     add_provider_to_user(params[:provider])
     auth = current_user.authentications.find_by_provider(params[:provider])
     if auth

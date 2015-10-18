@@ -50,7 +50,7 @@ class UsersController < ApplicationController
     end
 
 
-    @weather_report = WeatherReport.new("Cairo")
+    @weather_report = WeatherReport.new("Tokyo")
     @weather_report.get_report
 
   end

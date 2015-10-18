@@ -129,7 +129,7 @@ Rails.application.config.sorcery.configure do |config|
   #
   config.google.key = Figaro.env.google_client_id
   config.google.secret = Figaro.env.google_client_secret_id
-  config.google.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=google"
+  config.google.callback_url = "http://localhost:3000/oauth/callback?provider=google"
   config.google.user_info_mapping = {:email => "email", :username => "name"}
   #
   # config.vk.key = ""
