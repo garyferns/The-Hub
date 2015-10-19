@@ -63,7 +63,9 @@
 
     <% if @feed %>
       <% @feed.each do |item| %>
+        <p><%= item["from"]["name"] %></p>
         <p><%= item["message"] %></p>
+         <p><%= item["picture"] %></p>
       <% end %>
     <% end %>
   </div>

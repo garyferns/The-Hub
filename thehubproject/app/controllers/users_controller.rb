@@ -46,7 +46,11 @@ class UsersController < ApplicationController
     face_client = current_user.facebook_client
     if face_client
       @facebook_profile = face_client.get_object("me")
-      @feed = face_client.get_connections("me", "feed")
+      # @feed = face_client.get_connections("me", "feed", "from")
+      @feed = face_client.get_connection('me', 'posts',
+                    { fields: ['message', 'id', 'from', 'type',
+                                'picture', 'link', 'created_time', 'updated_time'
+                        ]})
     end
 
 
