@@ -35,11 +35,14 @@ class User < ActiveRecord::Base
     end
   end
 
+  def google_authentication
+    authentications.find_by_provider("google")
+  end
+
   def google_client
     # Application name is what you named it in Google Developer Console
-    google_api_client = Google::APIClient.new({
-      application_name: 'The Hub'
-    })
+    #THE PATH OF THE GOOGLE_API_CLIENT MAY HAVE TO BE CHANGED.
+    google_api_client = Google::Apis::GmailV1::GmailService.new
     google_api_client.authorization = Signet::OAuth2::Client.new({
       client_id: Figaro.env.google_client_id,
       client_secret: Figaro.env.google_client_secret_id,
@@ -50,9 +53,9 @@ class User < ActiveRecord::Base
 
   def gmail_threads
     client = google_client
-    gmail_api = client.discovered_api('gmail', 'v1')
+    gmail_api = Google::Apis::GmailV1::GmailService.new
     results = client.execute!(
-      :api_method => gmail_api.users.threads.list,
+      :api_method => gmail_api.list_user_messages('me'),
       :parameters => { :userId => 'me' })
     threads = results.data.threads
   end
