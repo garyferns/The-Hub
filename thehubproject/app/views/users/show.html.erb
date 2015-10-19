@@ -96,6 +96,22 @@
 
   <br>
 
+
+
+<p><%= link_to 'Link Google', auth_at_provider_path(:provider => :google) %></p>
+
+<% if current_user.google_authentication %>
+  <ul>
+    <% current_user.gmail_threads.each do |thread| %>
+      <li><%= thread.snippet %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+
+
+
   <!--
   <br><p><h1>Edit Applications</h1></p></br>
 

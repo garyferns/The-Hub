@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 
+  require 'google/apis/gmail_v1'
 
   authenticates_with_sorcery!
 
@@ -9,9 +10,8 @@ class User < ActiveRecord::Base
 
   validates :email, uniqueness: true
 
-  has_many :authentications, :dependent => :destroy
+  has_many :authentications, dependent: :destroy
 
-  require 'gmail'
 
   def twitter_client
     twitter_authentication = self.authentications.find_by_provider("twitter")
@@ -35,30 +35,27 @@ class User < ActiveRecord::Base
     end
   end
 
-  def gmail_client
-    if gmail_authenitcation
-      gmail_authentication = self.authentications.find_by_provider("gmail")
-      gmail = Gmail.connect(:xoauth, self.gmail_address,
-        :token           => gmail_authentication.oauth_token,
-        :secret          => gmail_authentication.oauth_secret,
-        :consumer_key    => Figaro.env.google_client_id,
-        :consumer_secret => Figaro.env.google_client_secret_id
-        )
-    end
-    return gmail
-  end
-
   def google_client
-
-    gmail = Gmail.connect(:xoauth, "gareth.fernandes7@gmail.com",
-      :token           => 'google_authentication.oauth_token',
-      :secret          => 'google_authentication.oauth_secret',
-      :consumer_key    => 'Figaro.env.google_client_id',
-      :consumer_secret => 'Figaro.env.google_client_secret_id'
-    )
-
+    # Application name is what you named it in Google Developer Console
+    google_api_client = Google::APIClient.new({
+      application_name: 'The Hub'
+    })
+    google_api_client.authorization = Signet::OAuth2::Client.new({
+      client_id: Figaro.env.google_client_id,
+      client_secret: Figaro.env.google_client_secret_id,
+      access_token: google_authentication.access_token
+    })
+    return google_api_client
   end
 
+  def gmail_threads
+    client = google_client
+    gmail_api = client.discovered_api('gmail', 'v1')
+    results = client.execute!(
+      :api_method => gmail_api.users.threads.list,
+      :parameters => { :userId => 'me' })
+    threads = results.data.threads
+  end
 
 
 
