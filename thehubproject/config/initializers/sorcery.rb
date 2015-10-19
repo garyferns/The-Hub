@@ -111,12 +111,12 @@ Rails.application.config.sorcery.configure do |config|
   #
   config.twitter.key = Figaro.env.tw_consumer_key
   config.twitter.secret = Figaro.env.tw_consumer_secret
-  config.twitter.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=twitter"
+  config.twitter.callback_url = "#{Figaro.env.cb_base_url}/callback?provider=twitter"
   config.twitter.user_info_mapping = {:email => "screen_name"}
 
   config.facebook.key = Figaro.env.fb_app_id
   config.facebook.secret = Figaro.env.fb_app_secret
-  config.facebook.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=facebook"
+  config.facebook.callback_url = "#{Figaro.env.cb_base_url}/callback?provider=facebook"
   config.facebook.user_info_mapping = {:email => "name"}
   config.facebook.access_permissions = ["email", "publish_actions", "user_posts"]
   config.facebook.display = "page"
@@ -129,7 +129,7 @@ Rails.application.config.sorcery.configure do |config|
   #
   config.google.key = Figaro.env.google_client_id
   config.google.secret = Figaro.env.google_client_secret_id
-  config.google.callback_url = "http://localhost:3000/oauth/callback?provider=google"
+  config.google.callback_url = "#{Figaro.env.cb_base_url}/callback?provider=google"
   config.google.user_info_mapping = {:email => "email", :username => "name"}
   config.google.scope = "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/gmail.readonly"
   #
