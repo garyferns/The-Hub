@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  require 'google/apis/gmail_v1'
+  require 'google/api_client'
 
   authenticates_with_sorcery!
 
@@ -35,14 +35,18 @@ class User < ActiveRecord::Base
     end
   end
 
-  def google_client
+  def google_authentication
+    authentications.find_by_provider("google")
+  end
+
+def google_client
     # Application name is what you named it in Google Developer Console
     google_api_client = Google::APIClient.new({
       application_name: 'The Hub'
     })
     google_api_client.authorization = Signet::OAuth2::Client.new({
-      client_id: Figaro.env.google_client_id,
-      client_secret: Figaro.env.google_client_secret_id,
+      client_id: Rails.application.secrets.google_consumer_key,
+      client_secret: Rails.application.secrets.google_consumer_secret,
       access_token: google_authentication.access_token
     })
     return google_api_client
@@ -56,6 +60,7 @@ class User < ActiveRecord::Base
       :parameters => { :userId => 'me' })
     threads = results.data.threads
   end
+
 
 
 

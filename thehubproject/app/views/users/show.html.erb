@@ -90,11 +90,8 @@
 
   <div class="box">
     <p><h3><u>Gmail</u></h3></p>
-    <%#= gmail.inbox.count %>
      <p><%= link_to 'Link Google', auth_at_provider_path(:provider => :google) %></p>
-
-    <% if current_user.google_authentication %>
-
+      <% if current_user.google_authentication %>
         <% current_user.gmail_threads.each do |thread| %>
           <ul class="message"><%= thread.snippet %></ul>
         <% end %>
