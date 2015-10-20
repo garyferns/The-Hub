@@ -39,27 +39,27 @@ class User < ActiveRecord::Base
     authentications.find_by_provider("google")
   end
 
-# def google_client
-#     # Application name is what you named it in Google Developer Console
-#     google_api_client = Google::APIClient.new({
-#       application_name: 'The Hub'
-#     })
-#     google_api_client.authorization = Signet::OAuth2::Client.new({
-#       client_id: Rails.application.secrets.google_consumer_key,
-#       client_secret: Rails.application.secrets.google_consumer_secret,
-#       access_token: google_authentication.access_token
-#     })
-#     return google_api_client
-#   end
+def google_client
+    # Application name is what you named it in Google Developer Console
+    google_api_client = Google::APIClient.new({
+      application_name: 'The Hub'
+    })
+    google_api_client.authorization = Signet::OAuth2::Client.new({
+      client_id: Rails.application.secrets.google_consumer_key,
+      client_secret: Rails.application.secrets.google_consumer_secret,
+      access_token: google_authentication.access_token
+    })
+    return google_api_client
+  end
 
-#   def gmail_threads
-#     client = google_client
-#     gmail_api = client.discovered_api('gmail', 'v1')
-#     results = client.execute!(
-#       :api_method => gmail_api.users.threads.list,
-#       :parameters => { :userId => 'me' })
-#     threads = results.data.threads
-#   end
+  def gmail_threads
+    client = google_client
+    gmail_api = client.discovered_api('gmail', 'v1')
+    results = client.execute!(
+      :api_method => gmail_api.users.threads.list,
+      :parameters => { :userId => 'me' })
+    threads = results.data.threads
+  end
 
 
 

@@ -86,7 +86,14 @@
 
   <br>
 
-
+  <div class="box">
+    <p><h3><u><%= link_to 'Gmail', redirect_to = 'https://mail.google.com/mail/u/0/#inbox' %></u></h3></p>
+      <% if current_user.google_authentication %>
+        <% current_user.gmail_threads.each do |thread| %>
+          <ul class="message"><%= thread.snippet %></ul>
+        <% end %>
+      <% end %>
+  </div>
 
 <br>
 

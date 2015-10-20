@@ -27,20 +27,6 @@ body {
   overflow: scroll;
 }
 
-/*.weather{
- word-wrap: normal;
-  position: relative;
-  font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
-  font-size: 16px;
-  text-align: center;
-  background: white;
-  border: 1px solid black;
-
-  width: 300px;
-  height: 300px;
-  overflow: scroll;
-}*/
-
 .tweet{
   /*border: 1px solid black;*/
 }
