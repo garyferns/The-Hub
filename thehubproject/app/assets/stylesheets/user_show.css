@@ -6,6 +6,22 @@ body {
   background-position: right top;
 }
 
+
+.flexbox{
+  display: flex;
+}
+
+
+#dm{
+  display: none;
+}
+
+#mentions{
+  display: none;
+}
+
+
+
 .report {
   background-color: white;
  }
@@ -26,6 +42,9 @@ body {
   min-height: 200px;
   overflow: scroll;
 }
+
+
+
 
 /*.weather{
  word-wrap: normal;

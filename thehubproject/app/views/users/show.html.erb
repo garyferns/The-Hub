@@ -14,7 +14,10 @@
 </br>
 
 
-  <div class="box">
+  <div class="flexbox">
+
+  <div id="mentions" class="box">
+
     </p><p class="tweet"><h3><u>Twitter Mentions</u></h3></p>
 
     <p class="tweet">
@@ -28,7 +31,7 @@
 
   <br>
 
-  <div class="box">
+  <div id="timeline" class="box">
     <p><h3><u>Twitter Timeline</u></h3></p>
     <p class="tweet">
     <% if @user_timeline %>
@@ -42,7 +45,7 @@
   <br>
 
 
-  <div class="box">
+  <div id="dm" class="box">
     <p><h3><u>Twitter Direct Messages</u></h3></p>
     <p class="tweet">
       <% if @direct_messages %>
@@ -73,6 +76,7 @@
   <br>
 
 
+
   <div class='box'>
     <p><h3><u>Weather Report</u></h3></p>
 
@@ -93,6 +97,8 @@
           <ul class="message"><%= thread.snippet %></ul>
         <% end %>
     <% end %>
+  </div>
+
   </div>
 
 <br>
