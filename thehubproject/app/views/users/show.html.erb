@@ -16,47 +16,63 @@
 
   <div class="flexbox">
 
-  <div id="mentions" class="box">
+    <div class="twitter-container box">
+      <div id="mentions">
 
-    </p><p class="tweet"><h3><u>Twitter Mentions</u></h3></p>
+        </p><p class="tweet"><h3><u>Twitter Mentions</u></h3></p>
 
-    <p class="tweet">
-      <% if @mentions %>
-        <% @mentions.each do |m| %>
-        <ul class="message"><b><%="#{m.user.screen_name}:"%></b> <%="#{m.text}" %></ul>
+        <p class="tweet">
+          <% if @mentions %>
+            <% @mentions.each do |m| %>
+            <ul class="message"><b><%="#{m.user.screen_name}:"%></b> <%="#{m.text}" %></ul>
+            <% end %>
+          <% end %>
+        </p>
+      </div>
+
+
+
+      <div id="timeline">
+        <p><h3><u>Twitter Timeline</u></h3></p>
+        <p class="tweet">
+        <% if @user_timeline %>
+          <% @user_timeline.each do |m| %>
+          <ul class="message"><b><%="#{m.user.screen_name}:"%></b> <%="#{m.text}" %></ul>
+          <% end %>
         <% end %>
-      <% end %>
-    </p>
+        </p>
+      </div>
+
+
+      <div id="dm">
+        <p><h3><u>Twitter Direct Messages</u></h3></p>
+        <p class="tweet">
+          <% if @direct_messages %>
+            <% @direct_messages.each do |m| %>
+            <ul class="message"><b><%= "#{m.attrs[:sender_screen_name]}:"%></b> <%="#{m.text}"%></ul>
+            <% end %>
+          <% end %>
+        </p>
+      </div>
+
+      <div class="twitter-btn-container">
+        <div id="tlbutton" class="btn-twitter">
+          timeline
+        </div>
+        <div id="menbutton" class="btn-twitter">
+          mentions
+        </div>
+
+        <div id="notibutton" class="btn-twitter">
+          notifications
+        </div>
+
+
+      </div>
+    </div>
+
   </div>
 
-  <br>
-
-  <div id="timeline" class="box">
-    <p><h3><u>Twitter Timeline</u></h3></p>
-    <p class="tweet">
-    <% if @user_timeline %>
-      <% @user_timeline.each do |m| %>
-      <ul class="message"><b><%="#{m.user.screen_name}:"%></b> <%="#{m.text}" %></ul>
-      <% end %>
-    <% end %>
-    </p>
-  </div>
-
-  <br>
-
-
-  <div id="dm" class="box">
-    <p><h3><u>Twitter Direct Messages</u></h3></p>
-    <p class="tweet">
-      <% if @direct_messages %>
-        <% @direct_messages.each do |m| %>
-        <ul class="message"><b><%= "#{m.attrs[:sender_screen_name]}:"%></b> <%="#{m.text}"%></ul>
-        <% end %>
-      <% end %>
-    </p>
-  </div>
-
-  <br>
 
 
 
@@ -88,12 +104,6 @@
     <% end %>
   </div>
 
-  <br>
-
-
-
-
-  <br>
 
   <div id="gmail" class="box">
     <p><h3><u><%= link_to 'Gmail', redirect_to = 'https://mail.google.com/mail/u/0/#inbox' %></u></h3></p>
@@ -106,41 +116,13 @@
 
   </div>
 
-<br>
 
-  <!--
-  <br><p><h1>Edit Applications</h1></p></br>
-
-    <div class="test">
-      <br><p><h1>Edit Applications</h1></p></br>
-
-
-
-      <br><p><b>Add a widget</b></p>
-      <p> * DROP DOWN WILL APPEAR * </p></br>
-
-
-
-
-      <br><p><b>Remove a widget</b></p>
-      <p> * DROP DOWN WILL APPEAR * </p></br>
-
-    </div>
-
-
-
-    <b><%= link_to 'Back', root_path %></b>
-
-   -->
 
 
 
   <b><%= link_to 'Back', root_path %></b>
 
 
-
-
-  <br></br>
 
 
 </center>
