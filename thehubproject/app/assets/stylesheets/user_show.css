@@ -15,6 +15,44 @@ body {
 }
 
 
+
+#tlbutton{
+/*  max-width: 25%;
+  min-width: 300px;
+  max-height: 100px;
+  min-height: 50px;*/
+}
+
+#timeline {
+  overflow: auto;
+  max-height: 500px;
+  min-height: 200px;
+}
+
+.twitter-container {
+  position: relative;
+}
+
+.twitter-container.box {
+  overflow: none;
+}
+
+.twitter-btn-container {
+  background-color: red;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.btn-twitter {
+  float: left;
+  width: 33.3333%;
+  background-color: yellow;
+  height: 30px;
+}
+
+
 #weather{
   height: 60px;
   min-width: 500px;
@@ -59,8 +97,6 @@ body {
   min-height: 200px;
   overflow: scroll;
 }
-
-
 
 
 /*.weather{
