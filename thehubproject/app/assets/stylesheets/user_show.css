@@ -9,8 +9,17 @@ body {
 
 .flexbox{
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
 }
 
+
+#weather{
+  height: 60px;
+  min-width: 500px;
+  max-width: 35%;
+}
 
 #dm{
   display: none;
@@ -20,6 +29,13 @@ body {
   display: none;
 }
 
+#gmail{
+  flex-grow: 3;
+  min-width: 90%;
+  max-width: 90%;
+  margin: 0px auto;
+
+}
 
 
 .report {
@@ -37,7 +53,8 @@ body {
   border: 1px solid black;
   margin: 10px;
 
-  width: 300px;
+  max-width: 25%;
+  min-width: 300px;
   max-height: 500px;
   min-height: 200px;
   overflow: scroll;
