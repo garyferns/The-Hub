@@ -14,7 +14,10 @@
 </br>
 
 
-  <div class="box">
+  <div class="flexbox">
+
+  <div id="mentions" class="box">
+
     </p><p class="tweet"><h3><u>Twitter Mentions</u></h3></p>
 
     <p class="tweet">
@@ -28,7 +31,7 @@
 
   <br>
 
-  <div class="box">
+  <div id="timeline" class="box">
     <p><h3><u>Twitter Timeline</u></h3></p>
     <p class="tweet">
     <% if @user_timeline %>
@@ -42,7 +45,7 @@
   <br>
 
 
-  <div class="box">
+  <div id="dm" class="box">
     <p><h3><u>Twitter Direct Messages</u></h3></p>
     <p class="tweet">
       <% if @direct_messages %>
@@ -54,6 +57,21 @@
   </div>
 
   <br>
+
+
+
+  <div id="weather" class='box'>
+    <p><h3><u>Weather Report</u></h3></p>
+
+    <h4>Weather in Cairo</h4>
+
+    <p>The current temperature is <b><%= @weather_report.current_temp %> C </b></p>
+    <p>The high for today is <b><%= @weather_report.max_temp %> C </b></p>
+    <p>The low for the day is <b><%= @weather_report.min_temp %> C </b></p>
+    <p>It will be <b><%= @weather_report.cloud_cover %></b> today</p>
+  </div>
+
+
 
   <div class="box">
     <p><h3><u>Facebook</u></h3></p>
@@ -73,26 +91,19 @@
   <br>
 
 
-  <div class='box'>
-    <p><h3><u>Weather Report</u></h3></p>
 
-    <h4>Weather in Cairo</h4>
-
-    <p>The current temperature is <b><%= @weather_report.current_temp %> C </b></p>
-    <p>The high for today is <b><%= @weather_report.max_temp %> C </b></p>
-    <p>The low for the day is <b><%= @weather_report.min_temp %> C </b></p>
-    <p>It will be <b><%= @weather_report.cloud_cover %></b> today</p>
-  </div>
 
   <br>
 
-  <div class="box">
+  <div id="gmail" class="box">
     <p><h3><u><%= link_to 'Gmail', redirect_to = 'https://mail.google.com/mail/u/0/#inbox' %></u></h3></p>
       <% if current_user.google_authentication %>
         <% current_user.gmail_threads.each do |thread| %>
           <ul class="message"><%= thread.snippet %></ul>
         <% end %>
       <% end %>
+  </div>
+
   </div>
 
 <br>

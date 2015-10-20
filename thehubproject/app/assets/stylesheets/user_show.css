@@ -6,6 +6,38 @@ body {
   background-position: right top;
 }
 
+
+.flexbox{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+
+#weather{
+  height: 60px;
+  min-width: 500px;
+  max-width: 35%;
+}
+
+#dm{
+  display: none;
+}
+
+#mentions{
+  display: none;
+}
+
+#gmail{
+  flex-grow: 3;
+  min-width: 90%;
+  max-width: 90%;
+  margin: 0px auto;
+
+}
+
+
 .report {
   background-color: white;
  }
@@ -21,11 +53,29 @@ body {
   border: 1px solid black;
   margin: 10px;
 
-  width: 300px;
+  max-width: 25%;
+  min-width: 300px;
   max-height: 500px;
   min-height: 200px;
   overflow: scroll;
 }
+
+
+
+
+/*.weather{
+ word-wrap: normal;
+  position: relative;
+  font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  background: white;
+  border: 1px solid black;
+
+  width: 300px;
+  height: 300px;
+  overflow: scroll;
+}*/
 
 .tweet{
   /*border: 1px solid black;*/

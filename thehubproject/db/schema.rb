@@ -30,11 +30,6 @@ ActiveRecord::Schema.define(version: 20151020180612) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "instagrams", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "crypted_password"
