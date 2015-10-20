@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151016164444) do
+ActiveRecord::Schema.define(version: 20151020180612) do
 
   create_table "authentications", force: :cascade do |t|
     t.integer  "user_id",       null: false
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20151016164444) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "twitter_name"
+    t.string   "city"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
