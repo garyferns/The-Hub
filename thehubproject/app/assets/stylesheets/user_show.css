@@ -35,7 +35,32 @@ body {
 
 .twitter-container.box {
   overflow: none;
+  background: #FAFAFA;
+  background-color: #FAFAFA;
+  background: -webkit-linear-gradient(#FAFAFA, #E7EEF4);
+  background: -o-linear-gradient(#FAFAFA, #E7EEF4);
+  background: linear-gradient(#FAFAFA, #E7EEF4);
+  height: auto;
+  width: 155px;
+  padding: 5px;
+  border: solid 1px #DCDCDC;
+  border-bottom: solid 1px #98B1C7;
+  font-family:  Helvetica Neue, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  list-style: none;
+  margin-left:6px;
+  margin-right:6px;
+  list-style-type:none;
+  padding-bottom: 9px;
+  margin-bottom: 6px;
+  color: #424242;
+  color: #3E5E75;
+  text-decoration: none;
+  color: #424242;
+  text-decoration : none
 }
+
 
 .twitter-btn-container {
   background-color: red;
@@ -119,8 +144,8 @@ body {
 
 .message{
 border: 1px solid gray;
-margin: 1px;
-background: -webkit-linear-gradient(#f3f3f3, #ffffff);
-}
+/*margin: 1px;
+*//*background: -webkit-linear-gradient(#f3f3f3, #ffffff);
+*/}
 
 

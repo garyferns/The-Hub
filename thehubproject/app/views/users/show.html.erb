@@ -14,8 +14,10 @@
 </br>
 
 
-  <div class="flexbox">
+    <div class="twitter-container box">
+      <div id="mentions">
 
+<<<<<<< HEAD
     <div class="twitter-container box">
       <div id="mentions">
 
@@ -32,6 +34,21 @@
 
 
 
+=======
+        </p><p class="tweet"><h3><u>Twitter Mentions</u></h3></p>
+
+        <p class="tweet">
+          <% if @mentions %>
+            <% @mentions.each do |m| %>
+            <ul class="message"><b><%="#{m.user.screen_name}:"%></b> <%="#{m.text}" %></ul>
+            <% end %>
+          <% end %>
+        </p>
+      </div>
+
+
+
+>>>>>>> frontend
       <div id="timeline">
         <p><h3><u>Twitter Timeline</u></h3></p>
         <p class="tweet">
@@ -42,6 +59,7 @@
         <% end %>
         </p>
       </div>
+<<<<<<< HEAD
 
 
       <div id="dm">
@@ -72,39 +90,40 @@
     </div>
 
   </div>
+=======
+>>>>>>> frontend
 
 
+      <div id="dm">
+        <p><h3><u>Twitter Direct Messages</u></h3></p>
+        <p class="tweet">
+          <% if @direct_messages %>
+            <% @direct_messages.each do |m| %>
+            <ul class="message"><b><%= "#{m.attrs[:sender_screen_name]}:"%></b> <%="#{m.text}"%></ul>
+            <% end %>
+          <% end %>
+        </p>
+      </div>
+
+      <div class="twitter-btn-container">
+        <div id="tlbutton" class="btn-twitter">
+          timeline
+        </div>
+        <div id="menbutton" class="btn-twitter">
+          mentions
+        </div>
+
+        <div id="notibutton" class="btn-twitter">
+          notifications
+        </div>
 
 
-  <div id="weather" class='box'>
-    <p><h3><u>Weather Report</u></h3></p>
+      </div>
 
-    <h4>Weather in Cairo</h4>
-
-    <p>The current temperature is <b><%= @weather_report.current_temp %> C </b></p>
-    <p>The high for today is <b><%= @weather_report.max_temp %> C </b></p>
-    <p>The low for the day is <b><%= @weather_report.min_temp %> C </b></p>
-    <p>It will be <b><%= @weather_report.cloud_cover %></b> today</p>
   </div>
 
 
-
-  <div class="box">
-    <p><h3><u>Facebook</u></h3></p>
-    <% if @facebook_profile %>
-      <%= @facebook_profile.inspect %>
-    <% end %>
-
-    <% if @feed %>
-      <% @feed.each do |item| %>
-        <p><%= item["from"]["name"] %></p>
-        <p><%= item["message"] %></p>
-         <p><%= item["picture"] %></p>
-      <% end %>
-    <% end %>
-  </div>
-
-
+<<<<<<< HEAD
   <div id="gmail" class="box">
     <p><h3><u><%= link_to 'Gmail', redirect_to = 'https://mail.google.com/mail/u/0/#inbox' %></u></h3></p>
       <% if current_user.google_authentication %>
@@ -118,13 +137,61 @@
 
 
 
+=======
 
 
-  <b><%= link_to 'Back', root_path %></b>
+    <div id="weather" class='box'>
+      <p><h3><u>Weather Report</u></h3></p>
+
+      <h4>Weather in Cairo</h4>
+
+      <p>The current temperature is <b><%= @weather_report.current_temp %> C </b></p>
+      <p>The high for today is <b><%= @weather_report.max_temp %> C </b></p>
+      <p>The low for the day is <b><%= @weather_report.min_temp %> C </b></p>
+      <p>It will be <b><%= @weather_report.cloud_cover %></b> today</p>
+    </div>
+
+
+
+    <div class="box">
+      <p><h3><u>Facebook</u></h3></p>
+      <% if @facebook_profile %>
+        <%= @facebook_profile.inspect %>
+      <% end %>
+
+      <% if @feed %>
+        <% @feed.each do |item| %>
+          <p><%= item["from"]["name"] %></p>
+          <p><%= item["message"] %></p>
+           <p><%= item["picture"] %></p>
+        <% end %>
+      <% end %>
+    </div>
+
+
+    <div id="gmail" class="box">
+      <p><h3><u><%= link_to 'Gmail', redirect_to = 'https://mail.google.com/mail/u/0/#inbox' %></u></h3></p>
+        <% if current_user.google_authentication %>
+          <% current_user.gmail_threads.each do |thread| %>
+            <ul class="message"><%= thread.snippet %></ul>
+          <% end %>
+        <% end %>
+    </div>
+
+  </div>
+>>>>>>> frontend
 
 
 
 
+    <b><%= link_to 'Back', root_path %></b>
+
+
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> frontend
 </center>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="user_show_script.js"></script>
