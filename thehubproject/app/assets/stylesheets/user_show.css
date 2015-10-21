@@ -2,8 +2,9 @@ body {
   font-family: "Times New Roman", "Times", "serif";
   background-color: #e5e5e5;
   background-image: url("test_back_image");
-  background-repeat: repeat-y;
+  background-repeat: no-repeat;
   background-position: right top;
+  background-attachment: fixed;
 }
 
 

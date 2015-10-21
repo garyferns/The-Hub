@@ -76,43 +76,46 @@
 
 
 
-  <div id="weather" class='box'>
-    <p><h3><u>Weather Report</u></h3></p>
+    <div id="weather" class='box'>
+      <p><h3><u>Weather Report</u></h3></p>
 
-    <h4>Weather in Cairo</h4>
-
-    <p>The current temperature is <b><%= @weather_report.current_temp %> C </b></p>
-    <p>The high for today is <b><%= @weather_report.max_temp %> C </b></p>
-    <p>The low for the day is <b><%= @weather_report.min_temp %> C </b></p>
-    <p>It will be <b><%= @weather_report.cloud_cover %></b> today</p>
-  </div>
+      <h4>Weather in <%= @weather_report.city_name %></h4>
 
 
+      <p>The current temperature is <b><%= @weather_report.current_temp %> C </b></p>
+      <p>The high for today is <b><%= @weather_report.max_temp %> C </b></p>
+      <p>The low for the day is <b><%= @weather_report.min_temp %> C </b></p>
+      <p>It will be <b><%= @weather_report.cloud_cover %></b> today</p>
+    </div>
 
-  <div class="box">
-    <p><h3><u>Facebook</u></h3></p>
-    <% if @facebook_profile %>
-      <%= @facebook_profile.inspect %>
-    <% end %>
 
-    <% if @feed %>
-      <% @feed.each do |item| %>
-        <p><%= item["from"]["name"] %></p>
-        <p><%= item["message"] %></p>
-         <p><%= item["picture"] %></p>
+
+    <div class="box">
+      <p><h3><u>Facebook</u></h3></p>
+      <% if @facebook_profile %>
+        <%= @facebook_profile.inspect %>
       <% end %>
-    <% end %>
-  </div>
 
-
-  <div id="gmail" class="box">
-    <p><h3><u><%= link_to 'Gmail', redirect_to = 'https://mail.google.com/mail/u/0/#inbox' %></u></h3></p>
-      <% if current_user.google_authentication %>
-        <% current_user.gmail_threads.each do |thread| %>
-          <ul class="message"><%= thread.snippet %></ul>
+      <% if @feed %>
+        <% @feed.each do |item| %>
+          <p><%= item["from"]["name"] %></p>
+          <p><%= item["message"] %></p>
+           <p><%= item["picture"] %></p>
         <% end %>
       <% end %>
-  </div>
+    </div>
+
+
+    <div id="gmail" class="box">
+      <p><h3><u><%= link_to 'Gmail', redirect_to = 'https://mail.google.com/mail/u/0/#inbox' %></u></h3></p>
+        <% @gmail_messages.each do |message| %>
+          <ul class="message">
+            <%= message[0] %>
+            <%= message[1] %>
+            <%= message[2] %>
+          </ul>
+        <% end %>
+    </div>
 
   </div>
 

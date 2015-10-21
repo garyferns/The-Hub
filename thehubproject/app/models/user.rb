@@ -61,6 +61,19 @@ def google_client
     threads = results.data.threads
   end
 
+  def gmail_message(id_number)
+    client = google_client
+    gmail_api = client.discovered_api('gmail', 'v1')
+    results = client.execute!(
+      :api_method => gmail_api.users.threads.get,
+      :parameters => { :userId => 'me', :id => id_number})
+    messages = results.data.messages
+  end
+
+
+
+
+
 
 
 

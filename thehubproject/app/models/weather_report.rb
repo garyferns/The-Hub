@@ -11,6 +11,10 @@ class WeatherReport
     @city = city
   end
 
+  def city_name
+    @city
+  end
+
   def get_report
     @response = self.class.get("/weather?q=#{@city}&APPID=#{ENV["weather_key"]}")
   end
