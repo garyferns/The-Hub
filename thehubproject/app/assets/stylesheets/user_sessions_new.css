@@ -18,7 +18,7 @@ form {
   margin-right: auto ;
 
   line-height: 24px;
-  color: rgb(234,0,0); /*This is the font colour*/
+  color: rgb(0,0,0); /*This is the font colour*/
 }
 
 input {
@@ -31,7 +31,7 @@ input {
 }
 
 .actions {
-  font-size: 16px;
+
   font-weight: bold;
   width:200px;
   height: 20px;

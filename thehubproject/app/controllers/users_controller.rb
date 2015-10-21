@@ -54,8 +54,20 @@ class UsersController < ApplicationController
     end
 
 
-    @weather_report = WeatherReport.new(current_user.city || 'Cairo')
+    @weather_report = WeatherReport.new(current_user.city || 'San Fransisco')
     @weather_report.get_report
+
+    if current_user.google_authentication
+      @thread_id = []
+      current_user.gmail_threads.each do |thread|
+        @thread_id << thread.id
+      end
+
+      @gmail_messages = @thread_id.map do |value|
+        [current_user.gmail_message(value).first.payload.headers.find {|header| header.name == "From"}.value]
+      end
+    end
+
   end
 
 
