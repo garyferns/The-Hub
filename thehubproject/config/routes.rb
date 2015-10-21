@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'user_profile' => 'users#show'
   get 'edit_user' => 'users#edit'
 
+
   resources :weather_reports
   resources :user_sessions
   resources :twitter
