@@ -76,6 +76,8 @@
       <% if current_user.google_authentication %>
         <% current_user.gmail_threads.each do |thread| %>
           <ul class="message"><%= thread.snippet %></ul>
+        <% end %>
+      <% end %>
 
     <div id="weather" class='box'>
       <p><h3><u>Weather Report</u></h3></p>
@@ -112,14 +114,9 @@
         </ul>
           <% end %>
     </div>
-
-  </div>
-
-
+</div>
 
     <b><%= link_to 'Back', root_path %></b>
 
 
 </center>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="user_show_script.js"></script>
