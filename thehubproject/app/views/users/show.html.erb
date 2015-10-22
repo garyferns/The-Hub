@@ -1,20 +1,19 @@
+
 <center>
-  <br><h1><u>Profile</u></h1></br>
+<br><h1><u>Profile</u></h1></br>
 
-  <div class="headings">
-    <p><b>First Name:</b> <%= current_user.first_name %> </p>
-    <p><b>Last Name:</b> <%= current_user.last_name %> </p>
-    <p><b>Email:</b> <%= current_user.email %> </p>
+    <div class="headings">
+      <p><b>First Name:</b> <%= current_user.first_name %> </p>
+      <p><b>Last Name:</b> <%= current_user.last_name %> </p>
+      <p><b>Email:</b> <%= current_user.email %> </p>
 
-    <h4>
-    Edit your information <b><i><%= link_to 'here', edit_user_path(current_user) %></i></b>
-    </h4>
-  </div>
+      <h4>
+      Edit your information <b><i><%= link_to 'here', edit_user_path(current_user) %></i></b>
+      </h4>
+    </div>
 
 </br>
 
-
-  <div class="flexbox">
 
     <div class="twitter-container box">
       <div id="mentions">
@@ -29,8 +28,6 @@
           <% end %>
         </p>
       </div>
-
-
 
       <div id="timeline">
         <p><h3><u>Twitter Timeline</u></h3></p>
@@ -74,7 +71,11 @@
   </div>
 
 
-
+  <div id="gmail" class="box">
+    <p><h3><u><%= link_to 'Gmail', redirect_to = 'https://mail.google.com/mail/u/0/#inbox' %></u></h3></p>
+      <% if current_user.google_authentication %>
+        <% current_user.gmail_threads.each do |thread| %>
+          <ul class="message"><%= thread.snippet %></ul>
 
     <div id="weather" class='box'>
       <p><h3><u>Weather Report</u></h3></p>
@@ -116,11 +117,7 @@
 
 
 
-
-
-  <b><%= link_to 'Back', root_path %></b>
-
-
+    <b><%= link_to 'Back', root_path %></b>
 
 
 </center>
