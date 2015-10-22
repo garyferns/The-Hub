@@ -71,11 +71,7 @@
   </div>
 
 
-  <div id="gmail" class="box">
-    <p><h3><u><%= link_to 'Gmail', redirect_to = 'https://mail.google.com/mail/u/0/#inbox' %></u></h3></p>
-      <% if current_user.google_authentication %>
-        <% current_user.gmail_threads.each do |thread| %>
-          <ul class="message"><%= thread.snippet %></ul>
+
 
     <div id="weather" class='box'>
       <p><h3><u>Weather Report</u></h3></p>
@@ -104,24 +100,11 @@
     </div>
 
 
-    <div id="gmail" class="box">
-      <p><h3><u><%= link_to 'Gmail', redirect_to = 'https://mail.google.com/mail/u/0/#inbox' %></u></h3></p>
-        <% @gmail_messages.each do |message| %>
-          <ul class="message">
-            <%= message[0] %>
-            <%= message[1] %>
-            <%= message[2] %>
-          </ul>
-        <% end %>
-    </div>
-
-  </div>
 
 
 
     <b><%= link_to 'Back', root_path %></b>
 
 
+
 </center>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="user_show_script.js"></script>
