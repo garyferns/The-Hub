@@ -59,12 +59,8 @@ class UsersController < ApplicationController
 
     if current_user.google_authentication
       @thread_id = []
-      current_user.gmail_threads.each do |thread|
+      current_user.gmail_threads[0...20].each do |thread|
         @thread_id << thread.id
-      end
-
-      @gmail_messages = @thread_id.map do |value|
-        [current_user.gmail_message(value).first.payload.headers.find {|header| header.name == "From"}.value]
       end
     end
 
@@ -74,7 +70,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name)
+    params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :city)
   end
 
 end
