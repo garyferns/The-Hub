@@ -14,58 +14,50 @@
 </br>
 
 
-  <div class="twitter-container box">
+    <div class="twit-box">
+      <h3>Twitter Timeline</h3>
+    <div class="twitter-box">
+          <% if @user_timeline %>
+            <% @user_timeline.each do |m| %>
+              <ul class="message"><b><%="#{m.user.screen_name}:"%></b> <%="#{m.text}" %></ul>
+          <% end %>
+        <% end %>
+    </div>
+
+
+
     <div id="mentions">
-
-      </p><p class="tweet"><h3><u>Twitter Mentions</u></h3></p>
-
-      <p class="tweet">
-        <% if @mentions %>
-          <% @mentions.each do |m| %>
-          <ul class="message"><b><%="#{m.user.screen_name}:"%></b> <%="#{m.text}" %></ul>
+      <h3>Twitter Mentions</h3></p>
+    <div class="twitter-box">
+              <% if @mentions %>
+              <% @mentions.each do |m| %>
+                <ul class="message"><b><%="#{m.user.screen_name}:"%></b> <%="#{m.text}" %></ul>
+            <% end %>
           <% end %>
-        <% end %>
-      </p>
-    </div>
 
-    <div id="timeline">
-      <p><h3><u>Twitter Timeline</u></h3></p>
-      <p class="tweet">
-      <% if @user_timeline %>
-        <% @user_timeline.each do |m| %>
-        <ul class="message"><b><%="#{m.user.screen_name}:"%></b> <%="#{m.text}" %></ul>
-        <% end %>
-      <% end %>
-      </p>
-    </div>
-
-
-    <div id="dm">
-      <p><h3><u>Twitter Direct Messages</u></h3></p>
-      <p class="tweet">
-        <% if @direct_messages %>
-          <% @direct_messages.each do |m| %>
-          <ul class="message"><b><%= "#{m.attrs[:sender_screen_name]}:"%></b> <%="#{m.text}"%></ul>
+      <div id="dm">
+        <p><h3>Twitter Direct Messages</h3></p>
+           <% if @direct_messages %>
+            <% @direct_messages.each do |m| %>
+              <ul class="message"><b><%= "#{m.attrs[:sender_screen_name]}:"%></b> <%="#{m.text}"%></ul>
+           <% end %>
           <% end %>
-        <% end %>
-      </p>
-    </div>
-
-    <div class="twitter-btn-container">
-      <div id="tlbutton" class="btn-twitter">
-        timeline
-      </div>
-      <div id="menbutton" class="btn-twitter">
-        mentions
+        </p>
       </div>
 
-      <div id="notibutton" class="btn-twitter">
-        notifications
-      </div>
+      <div class="twitter-btn-container twit-box">
+        <div id="tlbutton" class="btn-twitter">
+          timeline
+        </div>
+        <div id="menbutton" class="btn-twitter">
+          mentions
+        </div>
+
     </div>
   </div>
 
 
+<<<<<<< HEAD
   <div id="gmail" class="box">
     <p><h3><u><%= link_to 'Gmail', 'https://mail.google.com/mail/u/0/#inbox' %></u></h3></p>
 
@@ -76,32 +68,48 @@
       <% end %>
     </ul>
   </div>
+=======
+>>>>>>> a4d5a8db92a36a1d1e3c3561fe5904f73e1b0d15
 
-  <div id="weather" class='box'>
-    <p><h3><u>Weather Report</u></h3></p>
+    <div class="weather-box"
+      <p><h3><u>Weather Report</u></h3></p>
+      <h4>Weather in <%= @weather_report.city_name %></h4>
 
-    <h4>Weather in <%= @weather_report.city_name %></h4>
+      <p>The current temperature is <b><%= @weather_report.current_temp %> C </b></p>
+      <p>The high for today is <b><%= @weather_report.max_temp %> C </b></p>
+      <p>The low for the day is <b><%= @weather_report.min_temp %> C </b></p>
+      <p>It will be <b><%= @weather_report.cloud_cover %></b> today</p>
+    </div>
 
-    <p>The current temperature is <b><%= @weather_report.current_temp %> C </b></p>
-    <p>The high for today is <b><%= @weather_report.max_temp %> C </b></p>
-    <p>The low for the day is <b><%= @weather_report.min_temp %> C </b></p>
-    <p>It will be <b><%= @weather_report.cloud_cover %></b> today</p>
-  </div>
 
-  <div class="box">
-    <p><h3><u>Facebook</u></h3></p>
-    <% if @facebook_profile %>
-      <%= @facebook_profile.inspect %>
-    <% end %>
-
-    <% if @feed %>
-      <% @feed.each do |item| %>
-        <p><%= item["from"]["name"] %></p>
-        <p><%= item["message"] %></p>
-         <p><%= item["picture"] %></p>
+    <div class="box">
+      <p><h3><u>Facebook</u></h3></p>
+      <% if @facebook_profile %>
+        <%= @facebook_profile.inspect %>
       <% end %>
-    <% end %>
-  </div>
 
-<b><%= link_to 'Back', root_path %></b>
+      <% if @feed %>
+        <% @feed.each do |item| %>
+          <p><%= item["from"]["name"] %></p>
+          <p><%= item["message"] %></p>
+          <p><%= item["picture"] %></p>
+        <% end %>
+      <% end %>
+    </div>
+
+
+
+    <div id="gmail" class="box">
+      <p><h3><u><%= link_to 'Gmail', redirect_to = 'https://mail.google.com/mail/u/0/#inbox' %></u></h3></p>
+      <% current_user.gmail_message(@thread_id).map do |from| %>
+        <ul class="message">
+          <%= from %>
+        </ul>
+      <% end %>
+    </div>
+
+
+
+  <b><%= link_to 'Back', root_path %></b>
+
 </center>
