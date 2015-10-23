@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
 <center>
 <br><h1><u>Profile</u></h1></br>
 
@@ -16,7 +21,7 @@
 
     <div class="twit-box">
       <h3>Twitter Timeline</h3>
-    <div class="twitter-box">
+    <div class="box">
           <% if @user_timeline %>
             <% @user_timeline.each do |m| %>
               <ul class="message"><b><%="#{m.user.screen_name}:"%></b> <%="#{m.text}" %></ul>
@@ -28,7 +33,7 @@
 
     <div id="mentions">
       <h3>Twitter Mentions</h3></p>
-    <div class="twitter-box">
+    <div class="box">
               <% if @mentions %>
               <% @mentions.each do |m| %>
                 <ul class="message"><b><%="#{m.user.screen_name}:"%></b> <%="#{m.text}" %></ul>
@@ -54,18 +59,6 @@
         </div>
 
     </div>
-  </div>
-
-
-  <div id="gmail" class="box">
-    <p><h3><u><%= link_to 'Gmail', 'https://mail.google.com/mail/u/0/#inbox' %></u></h3></p>
-
-
-    <ul class="message">
-      <% current_user.gmail_message(@thread_id).each do |option| %>
-         <li> <%= link_to option.payload.headers.find { |header| header.name == 'From'}.value, "https://mail.google.com/mail/u/0/#inbox/#{option.id}", target: "_blank" %> </li>
-      <% end %>
-    </ul>
   </div>
 
     <div class="weather-box"
@@ -111,3 +104,4 @@
   <b><%= link_to 'Back', root_path %></b>
 
 </center>
+</html>
