@@ -14,46 +14,49 @@
 </br>
 
 
-    <div class="twitter-container box">
-      <div id="mentions">
+    <div class="twit-box">
+      <h3>Twitter Timeline</h3>
+    <div class="twitter-box">
+          <% if @user_timeline %>
+            <% @user_timeline.each do |m| %>
+              <ul class="message"><b><%="#{m.user.screen_name}:"%></b> <%="#{m.text}" %></ul>
+          <% end %>
+        <% end %>
+    </div>
 
-        </p><p class="tweet"><h3><u>Twitter Mentions</u></h3></p>
 
-        <p class="tweet">
-          <% if @mentions %>
-            <% @mentions.each do |m| %>
-            <ul class="message"><b><%="#{m.user.screen_name}:"%></b> <%="#{m.text}" %></ul>
+
+    <div id="mentions">
+      <h3>Twitter Mentions</h3></p>
+    <div class="twitter-box">
+              <% if @mentions %>
+              <% @mentions.each do |m| %>
+                <ul class="message"><b><%="#{m.user.screen_name}:"%></b> <%="#{m.text}" %></ul>
             <% end %>
           <% end %>
-        </p>
-      </div>
 
 
-
-      <div id="timeline">
-        <p><h3><u>Twitter Timeline</u></h3></p>
-        <p class="tweet">
-        <% if @user_timeline %>
-          <% @user_timeline.each do |m| %>
-          <ul class="message"><b><%="#{m.user.screen_name}:"%></b> <%="#{m.text}" %></ul>
+        <p><h3>Twitter Timeline</h3></p>
+          <% if @user_timeline %>
+            <% @user_timeline.each do |m| %>
+              <ul class="message"><b><%="#{m.user.screen_name}:"%></b> <%="#{m.text}" %></ul>
           <% end %>
         <% end %>
         </p>
-      </div>
+    </div>
 
 
       <div id="dm">
-        <p><h3><u>Twitter Direct Messages</u></h3></p>
-        <p class="tweet">
-          <% if @direct_messages %>
+        <p><h3>Twitter Direct Messages</h3></p>
+           <% if @direct_messages %>
             <% @direct_messages.each do |m| %>
-            <ul class="message"><b><%= "#{m.attrs[:sender_screen_name]}:"%></b> <%="#{m.text}"%></ul>
-            <% end %>
+              <ul class="message"><b><%= "#{m.attrs[:sender_screen_name]}:"%></b> <%="#{m.text}"%></ul>
+           <% end %>
           <% end %>
         </p>
       </div>
 
-      <div class="twitter-btn-container">
+      <div class="twitter-btn-container twit-box">
         <div id="tlbutton" class="btn-twitter">
           timeline
         </div>
@@ -68,22 +71,21 @@
 
       </div>
 
+    </div>
   </div>
 
 
 
-
-    <div id="weather" class='box'>
+    <div class="weather-box"
       <p><h3><u>Weather Report</u></h3></p>
-
-      <h4>Weather in Cairo</h4>
-
-      <p>The current temperature is <b><%= @weather_report.current_temp %> C </b></p>
-      <p>The high for today is <b><%= @weather_report.max_temp %> C </b></p>
-      <p>The low for the day is <b><%= @weather_report.min_temp %> C </b></p>
-      <p>It will be <b><%= @weather_report.cloud_cover %></b> today</p>
+        <div id="weather" class='inner-weather'>
+          <h4>Weather in Cairo</h4>
+            <p>The current temperature is <b><%= @weather_report.current_temp %> C </b></p>
+            <p>The high for today is <b><%= @weather_report.max_temp %> C </b></p>
+            <p>The low for the day is <b><%= @weather_report.min_temp %> C </b></p>
+            <p>It will be <b><%= @weather_report.cloud_cover %></b> today</p>
+        </div>
     </div>
-
 
 
     <div class="box">
@@ -96,7 +98,7 @@
         <% @feed.each do |item| %>
           <p><%= item["from"]["name"] %></p>
           <p><%= item["message"] %></p>
-           <p><%= item["picture"] %></p>
+          <p><%= item["picture"] %></p>
         <% end %>
       <% end %>
     </div>
@@ -116,7 +118,7 @@
 
 
 
-    <b><%= link_to 'Back', root_path %></b>
+  <b><%= link_to 'Back', root_path %></b>
 
 
 
