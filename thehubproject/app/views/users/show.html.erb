@@ -1,4 +1,3 @@
-
 <center>
 <br><h1><u>Profile</u></h1></br>
 
@@ -68,12 +67,14 @@
 
 
   <div id="gmail" class="box">
-    <p><h3><u><%= link_to 'Gmail', redirect_to = 'https://mail.google.com/mail/u/0/#inbox' %></u></h3></p>
-    <% current_user.gmail_message(@thread_id).map do |from| %>
-      <ul class="message">
-        <%= from %>
-      </ul>
-    <% end %>
+    <p><h3><u><%= link_to 'Gmail', 'https://mail.google.com/mail/u/0/#inbox' %></u></h3></p>
+
+
+    <ul class="message">
+      <% current_user.gmail_message(@thread_id).each do |option| %>
+         <li> <%= link_to option.payload.headers.find { |header| header.name == 'From'}.value, "https://mail.google.com/mail/u/0/#inbox/#{option.id}", target: "_blank" %> </li>
+      <% end %>
+    </ul>
   </div>
 
   <div id="weather" class='box'>

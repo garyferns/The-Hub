@@ -71,14 +71,14 @@ def google_client
     end
 
     @gmail_messages = id_number.map do |value|
-    batch.add(api_method: gmail_api.users.threads.get, parameters: { :userId => 'me', :id => value })
+      batch.add(api_method: gmail_api.users.threads.get, parameters: { :userId => 'me', :id => value })
     end
     client.execute(batch)
 
     @gmail_messages = batch_results
 
     @gmail_messages.map do |item|
-    item.data.messages[0].payload.headers.find { |header| header.name == 'From'}.value
+      item.data.messages[0]
     end
   end
 
