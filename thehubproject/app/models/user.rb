@@ -64,10 +64,22 @@ def google_client
   def gmail_message(id_number)
     client = google_client
     gmail_api = client.discovered_api('gmail', 'v1')
-    results = client.execute!(
-      :api_method => gmail_api.users.threads.get,
-      :parameters => { :userId => 'me', :id => id_number})
-    messages = results.data.messages
+    batch_results = []
+
+    batch = Google::APIClient::BatchRequest.new do |result|
+      batch_results << result
+    end
+
+    @gmail_messages = id_number.map do |value|
+    batch.add(api_method: gmail_api.users.threads.get, parameters: { :userId => 'me', :id => value })
+    end
+    client.execute(batch)
+
+    @gmail_messages = batch_results
+
+    @gmail_messages.map do |item|
+    item.data.messages[0].payload.headers.find { |header| header.name == 'From'}.value
+    end
   end
 
 
