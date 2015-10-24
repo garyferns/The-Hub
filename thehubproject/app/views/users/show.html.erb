@@ -6,7 +6,7 @@
 <center>
 <br><h1><u>Profile</u></h1></br>
 
-  <div class="">
+  <div class="headings">
     <p><b>First Name:</b> <%= current_user.first_name %> </p>
     <p><b>Last Name:</b> <%= current_user.last_name %> </p>
     <p><b>Email:</b> <%= current_user.email %> </p>
@@ -19,9 +19,9 @@
 </br>
 
 
-    <div class="">
+    <div class="twit-box">
       <h3>Twitter Timeline</h3>
-    <div class="">
+    <div class="box">
           <% if @user_timeline %>
             <% @user_timeline.each do |m| %>
               <ul class="message"><b><%="#{m.user.screen_name}:"%></b> <%="#{m.text}" %></ul>
@@ -31,16 +31,16 @@
 
 
 
-    <div class="container">
+    <div id="mentions">
       <h3>Twitter Mentions</h3></p>
-      <div id="">
+    <div class="box">
               <% if @mentions %>
               <% @mentions.each do |m| %>
                 <ul class="message"><b><%="#{m.user.screen_name}:"%></b> <%="#{m.text}" %></ul>
             <% end %>
           <% end %>
 
-      <div id="">
+      <div id="dm">
         <p><h3>Twitter Direct Messages</h3></p>
            <% if @direct_messages %>
             <% @direct_messages.each do |m| %>
@@ -50,18 +50,18 @@
         </p>
       </div>
 
-      <div class="">
-        <div id="" class="">
+      <div class="twitter-btn-container twit-box">
+        <div id="tlbutton" class="btn-twitter">
           timeline
         </div>
-        <div id="" class="">
+        <div id="menbutton" class="btn-twitter">
           mentions
         </div>
 
     </div>
   </div>
 
-    <div class=""
+    <div class="weather-box"
       <p><h3><u>Weather Report</u></h3></p>
       <h4>Weather in <%= @weather_report.city_name %></h4>
 
@@ -72,7 +72,7 @@
     </div>
 
 
-    <div class="container">
+    <div class="box">
       <p><h3><u>Facebook</u></h3></p>
       <% if @facebook_profile %>
         <%= @facebook_profile.inspect %>
@@ -89,9 +89,9 @@
 
 
 
-    <div id="gmail" class="container">
+    <div id="gmail" class="box">
       <p><h3><u><%= link_to 'Gmail', 'https://mail.google.com/mail/u/0/#inbox' %></u></h3></p>
-      <ul class="">
+      <ul class="message">
         <% current_user.gmail_message(@thread_id).each do |option| %>
           <li> <%= link_to option.payload.headers.find { |header| header.name == 'From'}.value, "https://mail.google.com/mail/u/0/#inbox/#{option.id}", target: "_blank" %> </li>
         <% end %>
