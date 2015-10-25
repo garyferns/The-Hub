@@ -1,15 +1,4 @@
-* {
-  box-sizing: border-box;
-}
 
-body {
-  font-family: "Times New Roman", "Times", "serif";
-  background-color: #e5e5e5;
-  background-image: url("test_back_image");
-  background-repeat: no-repeat;
-  background-position: right top;
-  background-attachment: fixed;
-}
 
 /*
 .flexbox{
@@ -21,16 +10,15 @@ body {
 */
 
 
-
-
-
 .report {
   background-color: white;
  }
 
 
 .box{
-  word-wrap: normal,
+  @include span-columns(2);
+  @include shift(1);
+  word-wrap: normal;
   position: relative;
   font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
   font-size: 16px;
