@@ -2,6 +2,17 @@
   box-sizing: border-box;
 }
 
+
+body {
+  font-family: "Times New Roman", "Times", "serif";
+  background: #fff;
+  /*background-image: url("test_back_image");*/
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
+}
+
+
 h1 {
   position: relative;
   font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
@@ -12,16 +23,20 @@ h1 {
   }
 
 
-body {
-  font-family: "Times New Roman", "Times", "serif";
-  background: #fff;
-  /*background-image: url("test_back_image");*/
-  background-repeat: no-repeat;
-  background-position: right top;
-  background-attachment: fixed;
-
+.header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  z-index: index -1;
+  background: #40376a;
+  font-family: arial;
+  color: white;
+  text-indent: 10px;
 }
 
-.practice{
 
+.content-container{
+  margin-top: 6%;
 }

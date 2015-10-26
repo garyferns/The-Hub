@@ -6,21 +6,31 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-<div class="notice">
-   <%= flash[:notice] %>
-</div>
-<div class="alert">
-   <%= flash[:alert] %>
-</div>
-<div>
- <% if current_user %>
-      <%= link_to "Profile", user_profile_path %>
-      <%= link_to 'Logout', user_session_path(current_user), method: :delete %>
-<% end %>
-</div>
 
-<%= yield %>
+<header>
+  <div class="header">
+    <h1>The Hub</h1>
+  </div>
+</header>
+
+
+<body>
+
+  <div class="content-container">
+  <div class="notice">
+     <%= flash[:notice] %>
+  </div>
+  <div class="alert">
+     <%= flash[:alert] %>
+  </div>
+  <div>
+   <% if current_user %>
+        <%= link_to "Profile", user_profile_path %>
+        <%= link_to 'Logout', user_session_path(current_user), method: :delete %>
+  <% end %>
+  </div>
+  </div>
+  <%= yield %>
 
 
 </body>
