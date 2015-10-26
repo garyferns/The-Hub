@@ -23,24 +23,28 @@ form {
 }
 
 
-input    {
+.field input {
 box-shadow: 0 1px 3px rgba(#000, .2);
 width:425px;
 display:block;
 border: 1px solid #999;
 height: 40px;
-text-align: center;
+text-align: left;
 font-size: 16px;
 }
 
-.actions {
+.actions input {
   font-weight: bold;
-  height: 20px;
+  width:425px;
+  display:block;
+  height: 40px;
   position:relative;
   margin-left: auto ;
   margin-right: auto ;
-  margin-top: 20px;
+  margin-top: 40px;
   text-align: center;
+  font-size: 16px;
+  border: 1px solid #999;
 }
 
 

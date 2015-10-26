@@ -76,7 +76,7 @@ h1 {
     box-shadow: inset 0 4px #ccc;
     border-bottom: 4px solid #ccc;
 
-    -webkit-transition: all 0.5s;
+    -webkit-transition: all 0.5s; /* Safari 3.1 to 6.0 */
     transition: all 0.5s;
 }
 
@@ -103,12 +103,9 @@ h1 {
     box-sizing: border-box;
 
     background-color:#ffffff;
-}
+  }
 
-
-
-
-.tabs [id^="tab"]:checked + label {
+  .tabs [id^="tab"]:checked + label {
     background: #FFF;
     box-shadow: inset 0 4px #3498db;
     border-bottom: 4px solid #3498db;
