@@ -18,108 +18,98 @@
 
 </br>
 
+  <div class="box">
+    <div class="tabs">
 
-<div class="box">
-  <div class="tabs">
+     <!-- Radio button and lable for #tab-content1 -->
 
-   <!-- Radio button and lable for #tab-content1 -->
+       <input type="radio" name="tabs" id="tab1" checked >
+       <label for="tab1", class="bar">
+           <i class="fa fa-home"></i><span>HTML5</span>
+       </label>
 
-     <input type="radio" name="tabs" id="tab1" checked >
-     <label for="tab1">
-         <i class="fa fa-th-list"></i><span>HTML5</span>
-     </label>
+       <!-- Radio button and lable for #tab-content2 -->
+       <input type="radio" name="tabs" id="tab2">
+       <label for="tab2", class="bar">
+           <i class="fa fa-twitter"></i><span>CSS3</span>
+       </label>
 
-     <!-- Radio button and lable for #tab-content2 -->
-     <input type="radio" name="tabs" id="tab2">
-     <label for="tab2">
-         <i class="fa fa-twitter"></i><span>CSS3</span>
-     </label>
-
-     <!-- Radio button and lable for #tab-content3 -->
-     <input type="radio" name="tabs" id="tab3">
-     <label for="tab3">
-         <i class="fa fa-inbox"></i><span>jQuery</span>
-     </label>
+       <!-- Radio button and lable for #tab-content3 -->
+       <input type="radio" name="tabs" id="tab3">
+       <label for="tab3", class="bar">
+           <i class="fa fa-inbox"></i><span>jQuery</span>
+       </label>
 
 
-     <div id="tab-content1" class="tab-content">
-        <h3>Twitter Timeline</h3>
-        <p> <% if @user_timeline %>
-              <% @user_timeline.each do |m| %>
+    <div id="tab-content1" class="tab-content">
+      <p> <% if @user_timeline %>
+            <% @user_timeline.each do |m| %>
+              <ul class="message"><b><%="#{m.user.screen_name}:"%></b> <%="#{m.text}" %></ul>
+          <% end %>
+        <% end %>
+      </p>
+    </div>
+
+
+    <div id="tab-content2" class="tab-content">
+      <h3>Twitter Mentions</h3>
+      <p><% if @mentions %>
+              <% @mentions.each do |m| %>
                 <ul class="message"><b><%="#{m.user.screen_name}:"%></b> <%="#{m.text}" %></ul>
             <% end %>
           <% end %>
-        </p>
-     </div>
+      </p>
+    </div>
 
-
-     <div id="tab-content2" class="tab-content">
-        <h3>Twitter Mentions</h3>
-        <p><% if @mentions %>
-                <% @mentions.each do |m| %>
-                  <ul class="message"><b><%="#{m.user.screen_name}:"%></b> <%="#{m.text}" %></ul>
-              <% end %>
-            <% end %>
-        </p>
-     </div>
-
-     <div id="tab-content3" class="tab-content">
-        <h3>Twitter Direct Messages</h3>
-        <p> <% if @direct_messages %>
-              <% @direct_messages.each do |m| %>
-                <ul class="message"><b><%= "#{m.attrs[:sender_screen_name]}:"%></b> <%="#{m.text}"%></ul>
-             <% end %>
-            <% end %>
-        </p>
-     </div>
+    <div id="tab-content3" class="tab-content">
+      <h3>Twitter Direct Messages</h3>
+      <p> <% if @direct_messages %>
+            <% @direct_messages.each do |m| %>
+              <ul class="message"><b><%= "#{m.attrs[:sender_screen_name]}:"%></b> <%="#{m.text}"%></ul>
+           <% end %>
+          <% end %>
+      </p>
+    </div>
     </div>
   </div>
 
 
+      <div class="box">
+        <p><h3><u>Weather Report</u></h3></p>
+        <h4>Weather in <%= @weather_report.city_name %></h4>
 
-
-    <div class="weather-box">
-    <div class="box">
-      <p><h3><u>Weather Report</u></h3></p>
-      <h4>Weather in <%= @weather_report.city_name %></h4>
-
-      <p>The current temperature is <b><%= @weather_report.current_temp %> C </b></p>
-      <p>The high for today is <b><%= @weather_report.max_temp %> C </b></p>
-      <p>The low for the day is <b><%= @weather_report.min_temp %> C </b></p>
-      <p>It will be <b><%= @weather_report.cloud_cover %></b> today</p>
-    </div>
-  </div>
-
-    <div class="box">
-      <p><h3><u>Facebook</u></h3></p>
-      <% if @facebook_profile %>
-        <%= @facebook_profile.inspect %>
-      <% end %>
-
-      <% if @feed %>
-        <% @feed.each do |item| %>
-          <p><%= item["from"]["name"] %></p>
-          <p><%= item["message"] %></p>
-          <p><%= item["picture"] %></p>
-        <% end %>
-      <% end %>
+        <p>The current temperature is <b><%= @weather_report.current_temp %> C </b></p>
+        <p>The high for today is <b><%= @weather_report.max_temp %> C </b></p>
+        <p>The low for the day is <b><%= @weather_report.min_temp %> C </b></p>
+        <p>It will be <b><%= @weather_report.cloud_cover %></b> today</p>
+      </div>
     </div>
 
-
-
-    <div id="gmail" class="box">
-      <p><h3><u><%= link_to 'Gmail', 'https://mail.google.com/mail/u/0/#inbox' %></u></h3></p>
-      <ul class="message">
-        <% current_user.gmail_message(@thread_id).each do |option| %>
-          <li> <%= link_to option.payload.headers.find { |header| header.name == 'From'}.value, "https://mail.google.com/mail/u/0/#inbox/#{option.id}", target: "_blank" %> </li>
+      <div class="box">
+        <p><h3><u>Facebook</u></h3></p>
+        <% if @facebook_profile %>
+          <%= @facebook_profile.inspect %>
         <% end %>
-        </ul>
-   </div>
+
+        <% if @feed %>
+          <% @feed.each do |item| %>
+            <p><%= item["from"]["name"] %></p>
+            <p><%= item["message"] %></p>
+            <p><%= item["picture"] %></p>
+          <% end %>
+        <% end %>
+      </div>
 
 
 
-
-  <b><%= link_to 'Back', root_path %></b>
+      <div id="gmail" class="box">
+        <h3 id="gmail-head"><u><%= link_to 'Gmail', 'https://mail.google.com/mail/u/0/#inbox' %></u></h3>
+        <ul class="message">
+          <% current_user.gmail_message(@thread_id).each do |option| %>
+            <li> <%= link_to option.payload.headers.find { |header| header.name == 'From'}.value, "https://mail.google.com/mail/u/0/#inbox/#{option.id}", target: "_blank" %> </li>
+          <% end %>
+          </ul>
+     </div>
 
 </center>
 

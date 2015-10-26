@@ -46,8 +46,9 @@ h1 {
     float: none;
     list-style: none;
     padding: 0;
-    margin: 75px auto;
+    margin: 25px auto;
     border-bottom: 4px solid #ccc;
+    position: relative;
 }
 
 .tabs:after {
@@ -75,7 +76,6 @@ h1 {
     cursor: pointer;
     box-shadow: inset 0 4px #ccc;
     border-bottom: 4px solid #ccc;
-
     -webkit-transition: all 0.5s; /* Safari 3.1 to 6.0 */
     transition: all 0.5s;
 }
@@ -99,9 +99,10 @@ h1 {
     display: none;
     width: 100%;
     float: left;
-    padding: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 15px;
     box-sizing: border-box;
-
     background-color:#ffffff;
   }
 
