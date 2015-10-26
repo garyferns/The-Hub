@@ -33,7 +33,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #Bourbon and Neat gems for Sass
 gem 'bourbon'
 gem 'neat'
-
+gem "font-awesome-sass"
 # Using Instagram gem
 gem 'instagram'
 

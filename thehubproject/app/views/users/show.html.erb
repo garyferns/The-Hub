@@ -19,53 +19,82 @@
 </br>
 
 
-    <div class="twit-box">
-    <div class="box">
-      <h3>Twitter Timeline</h3>
-          <% if @user_timeline %>
-            <% @user_timeline.each do |m| %>
-              <ul class="message"><b><%="#{m.user.screen_name}:"%></b> <%="#{m.text}" %></ul>
-          <% end %>
-        <% end %>
-    </div>
-  </div>
 
 
 
-    <div id="mentions">
-    <div class="box">
-      <h3>Twitter Mentions</h3></p>
-              <% if @mentions %>
-              <% @mentions.each do |m| %>
+
+
+
+
+
+
+<div class="box">
+  <div class="tabs">
+
+     <!-- Radio button and lable for #tab-content1 -->
+     <input type="radio" name="tabs" id="tab1" checked >
+     <label for="tab1">
+         <i class="fa fa-html5"></i><span>HTML5</span>
+     </label>
+
+     <!-- Radio button and lable for #tab-content2 -->
+     <input type="radio" name="tabs" id="tab2">
+     <label for="tab2">
+         <i class="fa fa-twitter"></i><span>CSS3</span>
+     </label>
+
+     <!-- Radio button and lable for #tab-content3 -->
+     <input type="radio" name="tabs" id="tab3">
+     <label for="tab3">
+         <i class="fa fa-list"></i><span>jQuery</span>
+     </label>
+
+
+     <div id="tab-content1" class="tab-content">
+        <h3>Twitter Timeline</h3>
+        <p> <% if @user_timeline %>
+              <% @user_timeline.each do |m| %>
                 <ul class="message"><b><%="#{m.user.screen_name}:"%></b> <%="#{m.text}" %></ul>
             <% end %>
           <% end %>
-    </div>
-  </div>
-
-
-
-      <div id="dm">
-        <div class="box">
-        <p><h3>Twitter Direct Messages</h3></p>
-           <% if @direct_messages %>
-            <% @direct_messages.each do |m| %>
-              <ul class="message"><b><%= "#{m.attrs[:sender_screen_name]}:"%></b> <%="#{m.text}"%></ul>
-           <% end %>
-          <% end %>
         </p>
-      </div>
-    </div>
-      <div class="twitter-btn-container twit-box">
-        <div id="tlbutton" class="btn-twitter">
-          timeline
-        </div>
-        <div id="menbutton" class="btn-twitter">
-          mentions
-        </div>
+     </div>
 
-    </div>
+
+     <div id="tab-content2" class="tab-content">
+        <h3>Twitter Mentions</h3>
+        <p><% if @mentions %>
+                <% @mentions.each do |m| %>
+                  <ul class="message"><b><%="#{m.user.screen_name}:"%></b> <%="#{m.text}" %></ul>
+              <% end %>
+            <% end %>
+        </p>
+     </div>
+
+     <div id="tab-content3" class="tab-content">
+        <h3>Twitter Direct Messages</h3>
+        <p> <% if @direct_messages %>
+              <% @direct_messages.each do |m| %>
+                <ul class="message"><b><%= "#{m.attrs[:sender_screen_name]}:"%></b> <%="#{m.text}"%></ul>
+             <% end %>
+            <% end %>
+        </p>
+     </div>
   </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <div class="weather-box">
     <div class="box">
@@ -111,4 +140,10 @@
   <b><%= link_to 'Back', root_path %></b>
 
 </center>
+
+
+
+
+
+
 </html>
