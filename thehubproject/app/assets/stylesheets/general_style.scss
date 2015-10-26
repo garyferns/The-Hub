@@ -41,13 +41,17 @@ h1 {
   margin-top: 6%;
 }
 
+#lineup {
+  padding: 0px;
+  margin: 0px;
+}
+
+
 .tabs {
-    max-width: 90%;
     float: none;
     list-style: none;
     padding: 0;
-    margin: 25px auto;
-    border-bottom: 4px solid #ccc;
+    border-top: 0px;
     position: relative;
 }
 
@@ -65,19 +69,18 @@ h1 {
     display: block;
     float: left;
     width: 33.3333%;
-
-    color: #ccc;
+    background:#3498db;
+    color: #ffffff;
     font-size: 30px;
     font-weight: normal;
     text-decoration: none;
     text-align: center;
     line-height: 2;
-
+    border-top: 0px;
+    border: none;
     cursor: pointer;
-    box-shadow: inset 0 4px #ccc;
-    border-bottom: 4px solid #ccc;
-    -webkit-transition: all 0.5s; /* Safari 3.1 to 6.0 */
-    transition: all 0.5s;
+    -webkit-transition: all 0.4s; /* Safari 3.1 to 6.0 */
+    transition: all 0.4s;
 }
 
 .tabs label span {
@@ -90,9 +93,7 @@ h1 {
 }
 
 .tabs label:hover {
-    color: #3498db;
     box-shadow: inset 0 4px #3498db;
-    border-bottom: 4px solid #3498db;
 }
 
 .tab-content {
@@ -101,7 +102,7 @@ h1 {
     float: left;
     padding-left: 0px;
     padding-right: 0px;
-    padding-top: 15px;
+
     box-sizing: border-box;
     background-color:#ffffff;
   }
@@ -109,7 +110,6 @@ h1 {
   .tabs [id^="tab"]:checked + label {
     background: #FFF;
     box-shadow: inset 0 4px #3498db;
-    border-bottom: 4px solid #3498db;
     color: #3498db;
 }
 

@@ -4,13 +4,7 @@
 
 
 <center>
-<br><h1><u>Profile</u></h1></br>
-
   <div class="headings">
-    <p><b>First Name:</b> <%= current_user.first_name %> </p>
-    <p><b>Last Name:</b> <%= current_user.last_name %> </p>
-    <p><b>Email:</b> <%= current_user.email %> </p>
-
     <h4>
     Edit your information <b><i><%= link_to 'here', edit_user_path(current_user) %></i></b>
     </h4>
@@ -25,24 +19,24 @@
 
        <input type="radio" name="tabs" id="tab1" checked >
        <label for="tab1", class="bar">
-           <i class="fa fa-home"></i><span>HTML5</span>
+           <i class="fa fa-twitter"></i><span>HTML5</span>
        </label>
 
        <!-- Radio button and lable for #tab-content2 -->
        <input type="radio" name="tabs" id="tab2">
        <label for="tab2", class="bar">
-           <i class="fa fa-twitter"></i><span>CSS3</span>
+           <i class="fa fa-comment"></i><span>CSS3</span>
        </label>
 
        <!-- Radio button and lable for #tab-content3 -->
        <input type="radio" name="tabs" id="tab3">
        <label for="tab3", class="bar">
-           <i class="fa fa-inbox"></i><span>jQuery</span>
+           <i class="fa fa-envelope"></i><span>jQuery</span>
        </label>
 
 
     <div id="tab-content1" class="tab-content">
-      <p> <% if @user_timeline %>
+      <p id="tweet"> <% if @user_timeline %>
             <% @user_timeline.each do |m| %>
               <ul class="message"><b><%="#{m.user.screen_name}:"%></b> <%="#{m.text}" %></ul>
           <% end %>
@@ -52,8 +46,7 @@
 
 
     <div id="tab-content2" class="tab-content">
-      <h3>Twitter Mentions</h3>
-      <p><% if @mentions %>
+      <p id="tweet"><% if @mentions %>
               <% @mentions.each do |m| %>
                 <ul class="message"><b><%="#{m.user.screen_name}:"%></b> <%="#{m.text}" %></ul>
             <% end %>
@@ -62,8 +55,7 @@
     </div>
 
     <div id="tab-content3" class="tab-content">
-      <h3>Twitter Direct Messages</h3>
-      <p> <% if @direct_messages %>
+      <p id="tweet"> <% if @direct_messages %>
             <% @direct_messages.each do |m| %>
               <ul class="message"><b><%= "#{m.attrs[:sender_screen_name]}:"%></b> <%="#{m.text}"%></ul>
            <% end %>
@@ -103,10 +95,10 @@
 
 
       <div id="gmail" class="box">
-        <h3 id="gmail-head"><u><%= link_to 'Gmail', 'https://mail.google.com/mail/u/0/#inbox' %></u></h3>
-        <ul class="message">
+        <h3 id="gmail-head"><%= link_to 'Gmail', 'https://mail.google.com/mail/u/0/#inbox' %></h3>
+        <ul id="lineup">
           <% current_user.gmail_message(@thread_id).each do |option| %>
-            <li> <%= link_to option.payload.headers.find { |header| header.name == 'From'}.value, "https://mail.google.com/mail/u/0/#inbox/#{option.id}", target: "_blank" %> </li>
+            <li class="message"> <%= link_to option.payload.headers.find { |header| header.name == 'From'}.value, "https://mail.google.com/mail/u/0/#inbox/#{option.id}", target: "_blank" %> </li>
           <% end %>
           </ul>
      </div>
