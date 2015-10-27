@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TheHub</title>
+  <title>The Hub</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -27,6 +27,10 @@
    <% if current_user %>
         <%= link_to "Profile", user_profile_path %>
         <%= link_to 'Logout', user_session_path(current_user), method: :delete %>
+        <%= link_to 'Settings', users_path %>
+        <% else %>
+      <%= link_to "Signup", new_user_path %> |
+      <%= link_to "Login", new_user_session_path %>
   <% end %>
   </div>
   </div>

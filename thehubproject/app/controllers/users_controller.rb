@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :require_login, except: [:new, :create]
 
   def index
-    @user = User.all
+    @user = current_user
   end
 
   def new
@@ -19,6 +19,10 @@ class UsersController < ApplicationController
     else
       render :new
     end
+  end
+
+  def settings
+    @user = current_user
   end
 
   def edit

@@ -1,28 +1,27 @@
 
 
-<div class="content-container">
 
-  <center><h1 class="log-in">Log In</h1>
+<center><h1 class="log-in">Log In</h1>
+  <div class="content-container">
 
-    <%= form_tag user_sessions_path, :method => :post do %>
+      <%= form_tag user_sessions_path, :method => :post do %>
 
-      <div class="field">
-        <%= label_tag :email %><br />
-        <%= text_field_tag :email %>
-      </div>
+        <div class="field">
+          <%= label_tag :email %><br />
+          <%= text_field_tag :email %>
+        </div>
 
-      <div class="field">
-        <%= label_tag :password %><br />
-        <%= password_field_tag :password %>
-      </div>
+        <div class="field">
+          <%= label_tag :password %><br />
+          <%= password_field_tag :password %>
+        </div>
 
-      <div class="actions">
-        <%= submit_tag "Login" %>
-      </div>
-    <% end %>
+        <div class="actions">
+          <%= submit_tag "Login" %>
+        </div>
+      <% end %>
 
-    <p>Signup instead <%= link_to 'here', new_user_path %>
-    </p>
-
-  </center>
-</div>
+      <p>Signup instead <%= link_to 'here', new_user_path %>
+      </p>
+  </div>
+</center>

@@ -12,25 +12,26 @@
 
 </br>
 
+
   <div class="box">
     <div class="tabs">
 
-     <!-- Radio button and lable for #tab-content1 -->
-
+       <!-- Radio button and label for #tab-content2 -->
        <input type="radio" name="tabs" id="tab1" checked >
-       <label for="tab1", class="bar">
-           <i class="fa fa-twitter"></i><span>HTML5</span>
+       <label for="tab1">
+           <i class="fa fa-twitter"></i><span>CSS3</span>
        </label>
 
-       <!-- Radio button and lable for #tab-content2 -->
+     <!-- Radio button and label for #tab-content1 -->
+
        <input type="radio" name="tabs" id="tab2">
-       <label for="tab2", class="bar">
-           <i class="fa fa-comment"></i><span>CSS3</span>
+       <label for="tab2">
+           <i class="fa fa-comment"></i><span>HTML5</span>
        </label>
 
-       <!-- Radio button and lable for #tab-content3 -->
+       <!-- Radio button and label for #tab-content3 -->
        <input type="radio" name="tabs" id="tab3">
-       <label for="tab3", class="bar">
+       <label for="tab3">
            <i class="fa fa-envelope"></i><span>jQuery</span>
        </label>
 
@@ -65,43 +66,48 @@
     </div>
   </div>
 
+  <div class="box">
+    <p><h3><u>Weather Report</u></h3></p>
+    <h4>Weather in <%= @weather_report.city_name %></h4>
 
-      <div class="box">
-        <p><h3><u>Weather Report</u></h3></p>
-        <h4>Weather in <%= @weather_report.city_name %></h4>
+    <p>The current temperature is <b><%= @weather_report.current_temp %> C </b></p>
+    <p>The high for today is <b><%= @weather_report.max_temp %> C </b></p>
+    <p>The low for the day is <b><%= @weather_report.min_temp %> C </b></p>
+    <p>It will be <b><%= @weather_report.cloud_cover %></b> today</p>
+  </div>
 
-        <p>The current temperature is <b><%= @weather_report.current_temp %> C </b></p>
-        <p>The high for today is <b><%= @weather_report.max_temp %> C </b></p>
-        <p>The low for the day is <b><%= @weather_report.min_temp %> C </b></p>
-        <p>It will be <b><%= @weather_report.cloud_cover %></b> today</p>
+
+  <div class="box">
+    <p><h3><u>Facebook</u></h3></p>
+    <% if @facebook_profile %>
+      <%= @facebook_profile.inspect %>
+    <% end %>
+
+    <% if @feed %>
+      <% @feed.each do |item| %>
+        <p><%= item["from"]["name"] %></p>
+        <p><%= item["message"] %></p>
+        <p><%= item["picture"] %></p>
+      <% end %>
+    <% end %>
+  </div>
+
+
+  <div class="box">
+    <div class="gmail">
+      <label for="tab4", class="gmail">
+        <i class="fa fa-envelope-o"></i><span>CSS3</span>
+      </label>
+
+      <div id="tab-content4" class="tab-content">
+        <p id="tweet"> <% current_user.gmail_message(@thread_id).each do |option| %>
+          <li class="message"> <%= link_to option.payload.headers.find { |header| header.name == 'From'}.value, "https://mail.google.com/mail/u/0/#inbox/#{option.id}", target: "_blank" %> </li>
+          <% end %>
+        </p>
       </div>
+
     </div>
-
-      <div class="box">
-        <p><h3><u>Facebook</u></h3></p>
-        <% if @facebook_profile %>
-          <%= @facebook_profile.inspect %>
-        <% end %>
-
-        <% if @feed %>
-          <% @feed.each do |item| %>
-            <p><%= item["from"]["name"] %></p>
-            <p><%= item["message"] %></p>
-            <p><%= item["picture"] %></p>
-          <% end %>
-        <% end %>
-      </div>
-
-
-
-      <div id="gmail" class="box">
-        <h3 id="gmail-head"><%= link_to 'Gmail', 'https://mail.google.com/mail/u/0/#inbox' %></h3>
-        <ul id="lineup">
-          <% current_user.gmail_message(@thread_id).each do |option| %>
-            <li class="message"> <%= link_to option.payload.headers.find { |header| header.name == 'From'}.value, "https://mail.google.com/mail/u/0/#inbox/#{option.id}", target: "_blank" %> </li>
-          <% end %>
-          </ul>
-     </div>
+  </div>
 
 </center>
 

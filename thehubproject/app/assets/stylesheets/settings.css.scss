@@ -1,0 +1,102 @@
+.settings-box {
+  @include span-columns(8);
+  @include shift(2);
+  border: 2px;
+  background: #ecf0f1;
+  min-height: 400px;
+  margin-top: 100px;
+  overflow: scroll;
+}
+
+.settings {
+    float: none;
+    list-style: none;
+    padding: 0;
+    border-top: 0px;
+    position: relative;
+}
+
+.settings:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.settings input[type=radio] {
+    display: none;
+}
+
+
+label.settings {
+    display: block;
+    float: left;
+    width: 33.3333%;
+    background:#3498db;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: normal;
+    text-decoration: none;
+    text-align: center;
+    line-height: 2;
+    border-top: 0px;
+    border: none;
+    cursor: pointer;
+    -webkit-transition: all 0.4s; /* Safari 3.1 to 6.0 */
+    transition: all 0.4s;
+}
+
+label.bar {
+ display: block;
+ float: left;
+ width: 50%;
+ color: #000;
+ font-size: 24px;
+background: #95a5a6;
+}
+
+
+label.bar:hover{
+ box-shadow: inset 0 4px #red;
+}
+
+
+.settings label span {
+    display: none;
+}
+
+.settings label i {
+    padding: 5px;
+    margin-right: 0;
+}
+
+.settings label:hover {
+    box-shadow: inset 0 4px #red;
+}
+
+.setting-content {
+    display: none;
+    width: 100%;
+    float: left;
+    padding-left: 0px;
+    padding-right: 0px;
+    box-sizing: border-box;
+    background-color:#ffffff;
+  }
+
+.setting-content#setting-content2{
+    width: 90%;
+    position: center;
+}
+
+  .settings [id^="setting"]:checked + label {
+    background: #FFF;
+    box-shadow: inset 0 4px red;
+    color: #000000;
+}
+
+
+#setting1:checked ~ #setting-content1,
+#setting2:checked ~ #setting-content2,
+#setting3:checked ~ #setting-content3 {
+    display: block;
+}
