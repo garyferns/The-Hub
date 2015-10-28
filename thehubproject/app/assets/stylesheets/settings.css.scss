@@ -52,6 +52,7 @@ label.bar {
  color: #000;
  font-size: 24px;
 background: #95a5a6;
+padding: 5px;
 }
 
 
@@ -70,7 +71,7 @@ label.bar:hover{
 }
 
 .settings label:hover {
-    box-shadow: inset 0 4px #red;
+    box-shadow: inset 0 4px rgb(181, 50, 103);
 }
 
 .setting-content {
@@ -80,17 +81,13 @@ label.bar:hover{
     padding-left: 0px;
     padding-right: 0px;
     box-sizing: border-box;
-    background-color:#ffffff;
+    /*background-color:#ffffff;*/
   }
 
-.setting-content#setting-content2{
-    width: 90%;
-    position: center;
-}
 
   .settings [id^="setting"]:checked + label {
     background: #FFF;
-    box-shadow: inset 0 4px red;
+    box-shadow: inset 0 4px rgb(181, 50, 103);
     color: #000000;
 }
 
@@ -99,4 +96,16 @@ label.bar:hover{
 #setting2:checked ~ #setting-content2,
 #setting3:checked ~ #setting-content3 {
     display: block;
+}
+
+
+.tweet {
+    padding: 10px;
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+    border-bottom: 1px solid black;
+}
+
+.tweet a{
+    text-decoration: none;
 }
