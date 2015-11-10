@@ -1,0 +1,27 @@
+# Add configuration values here, as shown below.
+#
+# pusher_app_id: "2954"
+# pusher_secret: abdc3b896a0ffb85d373
+# stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
+# stripe_publishable_key: pk_test_ro9jV5SNwGb1yYlQfzG17LHK
+#
+
+weather_key: 6a5917dc13787ed3bb5379766bae3970
+
+fb_app_id: '1060676403972590'
+fb_app_secret: '83797d15eca6c7d1b0f3cc11b9d3e0e4'
+
+google_client_id: '298462781452-kpra2mla5s21dna3rcqre6dfv75kqarl.apps.googleusercontent.com'
+google_client_secret_id: 'M8taNH22CQHsORP-pjR8ETkU'
+
+tw_consumer_key: 'V73ZYHsf09D6JQSaimS3I7I0N'
+tw_consumer_secret: 'VMxu360MQefNtmzX8w4RetpQnfNBlG4tSOBBzXE2yIUQjzFnKT'
+
+inst_config_client_id: '19d4af5b10714b11ad1489c69fe059ac'
+inst_config_access_token: '1320027.19d4af5.8c8ff54d4c1e48b6ad04bf2d1b74e433'
+cb_base_url: 'https://gareth.localtunnel.me/oauth'
+
+
+# production:
+#   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
+#   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
