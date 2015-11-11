@@ -19,7 +19,7 @@ tw_consumer_secret: 'VMxu360MQefNtmzX8w4RetpQnfNBlG4tSOBBzXE2yIUQjzFnKT'
 
 inst_config_client_id: '19d4af5b10714b11ad1489c69fe059ac'
 inst_config_access_token: '1320027.19d4af5.8c8ff54d4c1e48b6ad04bf2d1b74e433'
-cb_base_url: 'https://gareth.localtunnel.me/oauth'
+cb_base_url: 'https://frozen-dusk-1096.herokuapp.com/oauth'
 
 
 # production:
